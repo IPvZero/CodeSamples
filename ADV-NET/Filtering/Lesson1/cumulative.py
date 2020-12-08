@@ -3,7 +3,7 @@ INSTALL THE FOLLOWING:
 
 pip3 install nornir
 pip3 install nornir-scrapli
-pip3 install nornir_utils
+pip3 install nornir-utils
 """
 
 
