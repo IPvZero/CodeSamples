@@ -1,0 +1,13 @@
+---
+
+inventory:
+    plugin: SimpleInventory
+    options:
+        host_file: "/home/ipvzero/Nornir3/hosts.yaml"
+        group_file: "/home/ipvzero/Nornir3/groups.yaml"
+        defaults_file: "/home/ipvzero/Nornir3/defaults.yaml"
+
+runners:
+    plugin: threaded
+    options:
+        num_workers: 10
