@@ -1,0 +1,121 @@
+---
+
+
+TigerWoods:
+    hostname: 192.168.31.101
+    groups:
+        - grand_slam_winner
+        - athlete
+        - famous
+        - human
+    data:
+        sex: male
+        age: 44
+        married: False
+
+MerylStreep:
+    hostname: 192.168.31.102
+    groups:
+        - actress
+        - famous
+        - human
+    data:
+        sex: female
+        age: 70
+        married: True
+
+
+AndyMurray:
+    hostname: 192.168.31.103
+    groups:
+        - tennis_player
+        - athlete
+        - famous
+        - human
+    data:
+        sex: male
+        age: 32
+        married: True
+
+
+Harambe:
+    hostname: 192.168.31.104
+    groups:
+        - non-human
+        - famous
+    data:
+        sex: male
+        age: 17
+        married: False
+
+
+
+MarieCurie:
+    hostname: 192.168.31.105
+    groups:
+        - famous
+        - human
+        - nobel_prize_winner
+    data:
+        sex: female
+        age: 144
+        married: True
+
+
+NalaCat:
+    hostname: 192.168.31.106
+    groups:
+        - famous
+        - non-human
+    data:
+        sex: female
+        age: 9
+        married: False
+
+
+JoaquinPhoenix:
+    hostname: 192.168.31.107
+    groups:
+        - actor
+        - famous
+        - begins_with_a_J
+        - human
+    data:
+        sex: male
+        age: 45
+        married: False
+
+
+IPvZero:
+    hostname: 192.168.31.108
+    groups:
+        - human
+    data:
+        sex: male
+        age: 2
+        married: False
+
+JKRowling:
+    hostname: 192.168.31.109
+    groups:
+        - famous
+        - begins_with_a_J
+        - human
+    data:
+        sex: female
+        age: 54
+        married: True
+
+
+RogerFederer:
+    hostname: 192.168.31.110
+    groups:
+        - grand_slam_winner
+        - tennis_player
+        - athlete
+        - famous
+        - human
+    data:
+        sex: male
+        age: 38
+        married: True
