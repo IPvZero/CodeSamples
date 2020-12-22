@@ -1,10 +1,9 @@
+import pathlib
+from datetime import date
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
 from nornir_utils.plugins.tasks.files import write_file
-from datetime import date
-import pathlib
-import os
 
 nr = InitNornir(config_file="config.yaml")
 
@@ -28,7 +27,12 @@ def backup_configurations(task):
         pathlib.Path(date_dir).mkdir(exist_ok=True)
         pathlib.Path(command_dir).mkdir(exist_ok=True)
         r = task.run(task=send_command, command=cmd)
-        task.run(task=write_file,content=r.result,filename=f"" + str(command_dir) + "/" + task.host.name + ".txt")
+        task.run(
+            task=write_file,
+            content=r.result,
+            filename=f"" + str(command_dir) + "/" + task.host.name + ".txt",
+        )
+
 
 result = nr.run(name="Creating Backup Archive", task=backup_configurations)
 if result.failed:
