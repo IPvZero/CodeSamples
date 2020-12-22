@@ -6,6 +6,8 @@ from datetime import date
 import pathlib
 import os
 
+nr = InitNornir(config_file="config.yaml")
+
 my_list = []
 user_input = input("Enter commands: ")
 while user_input:
@@ -13,7 +15,6 @@ while user_input:
     user_input = input("Enter commands: ")
     if user_input == "\n":
         break
-
 
 def backup_configurations(task):
     for cmd in my_list:
@@ -28,8 +29,6 @@ def backup_configurations(task):
         pathlib.Path(command_dir).mkdir(exist_ok=True)
         r = task.run(task=send_command, command=cmd)
         task.run(task=write_file,content=r.result,filename=f"" + str(command_dir) + "/" + task.host.name + ".txt")
-
-nr = InitNornir(config_file="config.yaml")
 
 result = nr.run(name="Creating Backup Archive", task=backup_configurations)
 if result.failed:
