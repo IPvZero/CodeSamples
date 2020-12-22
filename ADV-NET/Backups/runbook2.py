@@ -6,6 +6,10 @@ from datetime import date
 import pathlib
 import os
 
+
+nr = InitNornir(config_file="config.yaml")
+
+
 def backup_configurations(task):
     commands = "show run", "show cdp neighbor detail", "show version"
     for cmd in commands:
@@ -21,8 +25,6 @@ def backup_configurations(task):
             content=r.result,
             filename=f"" + str(command_dir) + "/" + task.host.name + ".txt",
      )
-
-nr = InitNornir(config_file="config.yaml")
 
 
 result = nr.run(
