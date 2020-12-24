@@ -5,6 +5,7 @@ from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
 from nornir_utils.plugins.tasks.files import write_file
 
+
 nr = InitNornir(config_file="config.yaml")
 
 my_list = []
@@ -15,10 +16,10 @@ while user_input:
     if user_input == "\n":
         break
 
+
 def backup_configurations(task):
     for cmd in my_list:
-        name = str(cmd)
-        folder = name.replace(" ", "-")
+        folder = cmd.replace(" ", "-")
         folder = folder.strip("\n")
         config_dir = "config-archive"
         date_dir = config_dir + "/" + str(date.today())
@@ -30,13 +31,9 @@ def backup_configurations(task):
         task.run(
             task=write_file,
             content=r.result,
-            filename=f"" + str(command_dir) + "/" + task.host.name + ".txt",
+            filename=str(command_dir) + f"/{task.host}.txt",
         )
 
 
-result = nr.run(name="Creating Backup Archive", task=backup_configurations)
-if result.failed:
-    print("FAILED!")
-    result.raise_on_error()
-else:
-    print("ARCHIVE SUCCESSFUL")
+results = nr.run(name="Creating Backup Archive", task=backup_configurations)
+print_result(results)
