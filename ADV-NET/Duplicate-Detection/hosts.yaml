@@ -1,0 +1,356 @@
+---
+
+S1:
+  hostname: "192.168.31.101"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "Central"
+    layer: "Core"
+    contact: "CentralAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+S2:
+  hostname: "192.168.31.102"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "Central"
+    layer: "Core"
+    contact: "CentralAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+S3:
+  hostname: "192.168.31.103"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "Central"
+    layer: "Core"
+    contact: "CentralAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+S4:
+  hostname: "192.168.31.104"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "Central"
+    layer: "Core"
+    contact: "CentralAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S5:
+  hostname: "192.168.31.105"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "West"
+    layer: "Distribution"
+    contact: "WestAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+
+S6:
+  hostname: "192.168.31.106"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "West"
+    layer: "Distribution"
+    contact: "WestAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S7:
+  hostname: "192.168.31.107"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "West"
+    layer: "Access"
+    contact: "WestAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S8:
+  hostname: "192.168.31.108"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "West"
+    layer: "Access"
+    contact: "WestAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S9:
+  hostname: "192.168.31.109"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "West"
+    layer: "Access"
+    contact: "WestAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S10:
+  hostname: "192.168.31.110"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "North"
+    layer: "Distribution"
+    contact: "NorthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S11:
+  hostname: "192.168.31.111"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "North"
+    layer: "Distribution"
+    contact: "NorthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S12:
+  hostname: "192.168.31.112"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "North"
+    layer: "Access"
+    contact: "NorthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S13:
+  hostname: "192.168.31.113"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "North"
+    layer: "Access"
+    contact: "NorthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S14:
+  hostname: "192.168.31.114"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "North"
+    layer: "Access"
+    contact: "NorthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S15:
+  hostname: "192.168.31.115"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "South"
+    layer: "Distribution"
+    contact: "SouthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S16:
+  hostname: "192.168.31.116"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "South"
+    layer: "Distribution"
+    contact: "SouthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S17:
+  hostname: "192.168.31.117"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "South"
+    layer: "Access"
+    contact: "SouthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S18:
+  hostname: "192.168.31.118"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "South"
+    layer: "Access"
+    contact: "SouthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S19:
+  hostname: "192.168.31.119"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "South"
+    layer: "Access"
+    contact: "SouthAdministrator@cbtnuggets.com"
+    ASN: "65001"
+
+
+
+S20:
+  hostname: "192.168.31.120"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "East"
+    layer: "Distribution"
+    contact: "EastAdministrator@cbtnuggets.com"
+    ASN: "65005"
+
+
+
+S21:
+  hostname: "192.168.31.121"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "East"
+    layer: "Distribution"
+    contact: "EastAdministrator@cbtnuggets.com"
+    ASN: "65005"
+
+
+
+S22:
+  hostname: "192.168.31.122"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "East"
+    layer: "Access"
+    contact: "EastAdministrator@cbtnuggets.com"
+    ASN: "65005"
+
+
+
+S23:
+  hostname: "192.168.31.123"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "East"
+    layer: "Access"
+    contact: "EastAdministrator@cbtnuggets.com"
+    ASN: "65005"
+
+
+
+S24:
+  hostname: "192.168.31.124"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    location: "East"
+    layer: "Access"
+    contact: "EastAdministrator@cbtnuggets.com"
+    ASN: "65005"
