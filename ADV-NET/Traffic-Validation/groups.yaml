@@ -1,0 +1,38 @@
+---
+
+cisco_group:
+  username: john
+  password: cisco
+  platform: 'ios'
+  connection_options:
+    scrapli_netconf:
+        extras:
+          port: 830
+          ssh_config_file: True
+          auth_strict_key: False
+          timeout_transport: 10
+    scrapli:
+        extras:
+          port: 22
+          ssh_config_file: True
+          auth_strict_key: False
+          timeout_transport: 10
+
+
+arista_group:
+  username: john
+  password: arista
+  platform: 'eos'
+  connection_options:
+    scrapli_netconf:
+        extras:
+          port: 830
+          ssh_config_file: True
+          auth_strict_key: False
+          timeout_transport: 10
+    scrapli:
+        extras:
+          port: 22
+          ssh_config_file: True
+          auth_strict_key: False
+          timeout_transport: 10
