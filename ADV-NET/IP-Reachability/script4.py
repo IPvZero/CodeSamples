@@ -1,3 +1,7 @@
+"""
+Author: IPvZero
+"""
+
 import os
 import time
 import itertools
