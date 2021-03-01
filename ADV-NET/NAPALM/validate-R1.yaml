@@ -1,0 +1,11 @@
+---
+
+- get_facts:
+    fqdn: R1.cisco.com
+    hostname: R1
+    model: IOSv
+    os_version: IOSv Software (VIOS-ADVENTERPRISEK9-M), Version 15.8(3)M2, RELEASE SOFTWARE
+      (fc2)
+    serial_number: 94VRU9VO25TWFPNPT5VND
+    uptime: ">500"
+    vendor: Cisco
