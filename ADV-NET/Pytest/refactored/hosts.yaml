@@ -1,0 +1,61 @@
+---
+
+Spine1:
+  hostname: "192.168.31.101"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    role: "Spine"
+
+Spine2:
+  hostname: "192.168.31.102"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    role: "Spine"
+
+Leaf3:
+  hostname: "192.168.31.103"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    role: "Leaf"
+
+Leaf4:
+  hostname: "192.168.31.104"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    role: "Leaf"
+
+Leaf5:
+  hostname: "192.168.31.105"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    role: "Leaf"
+
+Leaf6:
+  hostname: "192.168.31.106"
+  username: "john"
+  password: "cisco"
+  port: 22
+  groups:
+    - cisco_group
+  data:
+    role: "Leaf"
