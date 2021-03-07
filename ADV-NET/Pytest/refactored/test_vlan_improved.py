@@ -42,4 +42,4 @@ class TestVLANs:
             name = vlans[vlan]["name"]
             vlan_dict = {"id": vlan_id, "name": name}
             vlan_list.append(vlan_dict)
-        assert expected_vlans == vlan_list, f"{nr_host} FAILED"% 
+        assert expected_vlans == vlan_list, f"{nr_host} FAILED"
