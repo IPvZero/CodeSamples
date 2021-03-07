@@ -50,4 +50,4 @@ class TestOSPFNeighbors:
                 my_list.append(key)
         num_neighbors = len(my_list)
         expected_neighbors = TestOSPFNeighbors.NEIGHBOR_COUNT[role]
-        assert num_neighbors == expected_neighbors% 
+        assert num_neighbors == expected_neighbors
