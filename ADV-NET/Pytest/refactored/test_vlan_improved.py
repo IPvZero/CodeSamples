@@ -1,3 +1,8 @@
+"""
+This script was written with help and guidance from Dmitry Figol
+https://github.com/dmfigol/
+"""
+
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
 from nornir_utils.plugins.tasks.data import load_yaml
