@@ -1,0 +1,5 @@
+vlans:
+ - id: 10
+   name: "TEN"
+ - id: 20
+   name: "TWENTY"
