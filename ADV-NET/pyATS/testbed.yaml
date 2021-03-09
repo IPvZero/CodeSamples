@@ -1,0 +1,79 @@
+devices:
+  Leaf3:
+    connections:
+      cli:
+        ip: 192.168.31.103
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: john
+      enable:
+        password: cisco
+    os: iosxe
+    type: iosxe
+  Leaf4:
+    connections:
+      cli:
+        ip: 192.168.31.104
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: john
+      enable:
+        password: cisco
+    os: iosxe
+    type: iosxe
+  Leaf5:
+    connections:
+      cli:
+        ip: 192.168.31.105
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: john
+      enable:
+        password: cisco
+    os: iosxe
+    type: iosxe
+  Leaf6:
+    connections:
+      cli:
+        ip: 192.168.31.106
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: john
+      enable:
+        password: cisco
+    os: iosxe
+    type: iosxe
+  Spine1:
+    connections:
+      cli:
+        ip: 192.168.31.101
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: john
+      enable:
+        password: cisco
+    os: iosxe
+    type: iosxe
+  Spine2:
+    connections:
+      cli:
+        ip: 192.168.31.102
+        protocol: ssh
+    credentials:
+      default:
+        password: cisco
+        username: john
+      enable:
+        password: cisco
+    os: iosxe
+    type: iosxe
