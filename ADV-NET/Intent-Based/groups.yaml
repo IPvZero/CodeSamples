@@ -1,0 +1,14 @@
+---
+
+cisco_group:
+  username: john
+  password: cisco
+  platform: 'ios'
+  connection_options:
+    netmiko:
+      extras:
+        global_delay_factor: 5
+    napalm:
+      extras:
+        optional_args:
+          global_delay_factor: 5
