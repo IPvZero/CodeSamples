@@ -1,0 +1,156 @@
+!
+
+!
+version 15.8
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition MGMT
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name cbtnuggets.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+archive
+ path flash:archive
+ write-memory
+file prompt quiet
+username john privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ vrf forwarding MGMT
+ ip address 192.168.31.102 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+{% if host.facts.OSPF is defined %}
+router ospf {{ host.facts.OSPF.process_id }}
+ router-id {{ host.facts.OSPF.rid }}
+{% if host.facts.OSPF.redistributing is defined %}
+{% for policy in host.facts.OSPF.redistributing %}
+ redistribute {{ policy }}
+{% endfor %}
+{% endif %}
+{% if host.facts.OSPF.networks is defined %}
+{% for network in host.facts.OSPF.networks %}
+ network {{ network }}
+{% endfor %}
+{% endif %}
+{% endif %}
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route vrf MGMT 0.0.0.0 0.0.0.0 10.188.188.1
+ip route vrf MGMT 10.188.188.0 255.255.255.0 10.188.188.1
+ip scp server enable
+!
+{% if host.facts.ACCESS_LISTS is defined %}
+{% for acl in host.facts.ACCESS_LISTS %}
+ip access-list extended {{ acl }}
+{% for rule in host.facts.ACCESS_LISTS[acl] %}
+ {{ rule }}
+{% endfor %}
+{% endfor %}
+{% endif %}
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login local
+ transport input all
+!
+no scheduler allocate
+{% if host.facts.NTP is defined %}
+{% if host.facts.NTP.update_calendar == True%}
+ntp update-calendar
+{% endif %}
+{% if host.facts.NTP.servers is defined %}
+{% for server in host.facts.NTP.servers %}
+ntp server {{ server }}
+{% endfor %}
+{% endif %}
+{% endif %}
+!
+end
