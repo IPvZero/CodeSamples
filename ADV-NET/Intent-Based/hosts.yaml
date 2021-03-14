@@ -1,0 +1,17 @@
+---
+
+R1:
+    username: "john"
+    password: "cisco"
+    hostname: 192.168.31.101
+    groups:
+        - cisco_group
+
+
+
+R2:
+    username: "john"
+    password: "cisco"
+    hostname: 192.168.31.102
+    groups:
+        - cisco_group
