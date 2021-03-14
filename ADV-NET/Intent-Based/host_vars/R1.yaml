@@ -1,0 +1,24 @@
+OSPF:
+    process_id: "1"
+    rid: "1.1.1.1"
+
+    networks:
+        - "1.1.1.1 0.0.0.0 area 0"
+        - "10.0.0.0 0.0.0.255 area 1"
+        - "33.33.33.33 0.0.0.0 area 33"
+
+ACCESS_LISTS:
+    ACL1:
+        - "permit ip host 1.1.1.1 host 8.8.8.8"
+        - "deny icmp any any"
+
+    ACL2:
+        - "permit tcp host 1.2.3.4 any eq 22"
+        - "permit icmp host 2.3.4.5 any"
+        - "deny ip any any"
+
+NTP:
+    update_calendar: True
+    servers:
+        - "1.1.1.1 prefer"
+        - "11.11.11.11"
