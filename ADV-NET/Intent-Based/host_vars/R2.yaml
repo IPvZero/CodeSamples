@@ -1,0 +1,26 @@
+OSPF:
+    process_id: "2"
+    rid: "2.2.2.2"
+    redistributing:
+        - "connected subnets"
+        - "eigrp 22 subnets"
+    networks:
+        - "2.2.2.2 0.0.0.0 area 0"
+        - "10.0.0.0 0.0.0.255 area 2"
+
+ACCESS_LISTS:
+    ACL10:
+        - "permit ip host 2.2.2.2 host 3.3.3.3"
+        - "deny icmp any any"
+
+    ACL20:
+        - "permit tcp host 4.3.2.1 any eq 22"
+        - "permit icmp host 9.9.9.9 any"
+        - "deny ip any host 8.8.8.8"
+
+NTP:
+    update_calendar: True
+    servers:
+        - "2.2.2.2 prefer"
+        - "22.22.22.22"
+        - "8.8.8.8"
