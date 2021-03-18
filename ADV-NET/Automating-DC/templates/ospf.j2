@@ -1,0 +1,5 @@
+router ospf underlay
+router-id {{ host.facts.OSPF.rid }}
+interface loo0
+ip address {{ host.facts.OSPF.Loopback }}
+ip router ospf underlay area 0.0.0.0
