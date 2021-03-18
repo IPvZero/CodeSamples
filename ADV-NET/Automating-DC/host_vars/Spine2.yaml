@@ -1,0 +1,18 @@
+OSPF:
+    rid: "10.10.10.2"
+    Loopback: "10.10.10.2/32"
+
+BGP:
+    ASN: "65000"
+    peers:
+        - neighbor: "10.10.10.3"
+          peer_asn: "65003"
+
+        - neighbor: "10.10.10.4"
+          peer_asn: "65004"
+
+        - neighbor: "10.10.10.5"
+          peer_asn: "65005"
+
+        - neighbor: "10.10.10.6"
+          peer_asn: "65006"
