@@ -1,0 +1,9 @@
+feature ospf
+feature bgp
+int e1/1-15
+no switchport
+no shut
+medium p2p
+ip ospf network point-to-point
+ip unnumbered loo0
+ip router ospf underlay area 0.0.0.0
