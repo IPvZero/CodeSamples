@@ -1,0 +1,52 @@
+{% if "dmvpn" in host.facts %}
+crypto isakmp policy 10
+encr 3des
+hash md5
+authentication pre-share
+crypto ipsec transform-set {{ host.group_facts.dmvpn.ipsec.name }} esp-3des esp-md5-hmac
+mode transport
+crypto keyring {{ host.group_facts.dmvpn.ipsec.name }} vrf FRONTDOOR
+pre-shared-key address 0.0.0.0 key {{ host.group_facts.dmvpn.ipsec.key }}
+crypto isakmp profile {{ host.group_facts.dmvpn.ipsec.name }}
+keyring {{ host.group_facts.dmvpn.ipsec.name }}
+match identity address 0.0.0.0 FRONTDOOR
+crypto ipsec profile {{ host.group_facts.dmvpn.ipsec.name }}
+set transform-set {{ host.group_facts.dmvpn.ipsec.name }}
+set isakmp-profile {{ host.group_facts.dmvpn.ipsec.name }}
+{% if host.facts.dmvpn.type == 'Hub' %}
+interface {{ host.facts.dmvpn.source.int }}
+vrf forwarding FRONTDOOR
+ip address {{ host.group_facts.dmvpn.hub.global_ip }} {{ host.group_facts.dmvpn.hub.global_mask }}
+no shut
+interface tunnel0
+ip address {{ host.group_facts.dmvpn.hub.tunnel_ip }} {{ host.group_facts.dmvpn.hub.tunnel_mask }}
+{% elif host.facts.dmvpn.type == 'Spoke' %}
+interface {{ host.facts.dmvpn.source.int }}
+vrf forwarding FRONTDOOR
+ip address {{ host.facts.dmvpn.source.ip }}
+no shut
+interface tunnel0
+ip address {{ host.facts.dmvpn.tunnel_ip }}
+{% endif %}
+ip mtu 1400
+ip nhrp authentication {{ host.group_facts.dmvpn.authentication }}
+{% if host.facts.dmvpn.type == 'Hub' %}
+ip nhrp map multicast dynamic
+{% elif host.facts.dmvpn.type == 'Spoke' %}
+ip nhrp map {{ host.group_facts.dmvpn.hub.tunnel_ip }} {{ host.group_facts.dmvpn.hub.global_ip }}
+{% endif %}
+ip nhrp network-id {{ host.group_facts.dmvpn.net_id }}
+ip nhrp holdtime {{ host.group_facts.dmvpn.holdtime }}
+{% if host.facts.dmvpn.type == 'Hub' %}
+ip nhrp redirect
+{% elif host.facts.dmvpn.type == 'Spoke' %}
+ip nhrp shortcut
+ip nhrp nhs {{ host.facts.dmvpn.hub.tunnel_ip }}
+{% endif %}
+ip tcp adjust-mss 1360
+tunnel source {{ host.facts.dmvpn.source.int }}
+tunnel mode gre multipoint
+tunnel key {{ host.group_facts.dmvpn.tunnel_key }}
+tunnel vrf FRONTDOOR
+tunnel protection ipsec profile {{ host.group_facts.dmvpn.ipsec.name }}
+{% endif %}
