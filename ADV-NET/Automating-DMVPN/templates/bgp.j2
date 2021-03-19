@@ -1,0 +1,23 @@
+{% if "dmvpn" in host.facts %}
+{% if host.facts.dmvpn.type == 'Hub' %}
+ip prefix-list DEFAULT permit 0.0.0.0/0
+route-map DEFAULT_ONLY
+match ip address prefix-list DEFAULT
+{% endif %}
+router bgp {{ host.group_facts.bgp.as }}
+{% if host.facts.dmvpn.type == 'Hub' %}
+neighbor {{ host.facts.bgp.peer_group }} peer-group
+neighbor {{ host.facts.bgp.peer_group }} remote-as {{ host.group_facts.bgp.as }}
+neighbor {{ host.facts.bgp.peer_group }} route-reflector-client
+neighbor {{ host.facts.bgp.peer_group }} update-source tunnel0
+neighbor {{ host.facts.bgp.peer_group }} next-hop-self all
+neighbor {{ host.facts.bgp.peer_group }} default-originate
+neighbor {{ host.facts.bgp.peer_group }} route-map DEFAULT_ONLY out
+bgp listen range {{ host.group_facts.dmvpn.tunnel_range }} peer-group {{ host.facts.bgp.peer_group }}
+{% elif host.facts.dmvpn.type == 'Spoke' %}
+bgp log-neighbor-changes
+redistribute connected
+neighbor {{ host.group_facts.dmvpn.hub.tunnel_ip }} remote-as {{ host.group_facts.bgp.as }}
+neighbor {{ host.group_facts.dmvpn.hub.tunnel_ip }} update-source tunnel0
+{% endif %}
+{% endif %}
