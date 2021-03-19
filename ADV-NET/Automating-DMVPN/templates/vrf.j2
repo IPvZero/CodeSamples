@@ -1,0 +1,4 @@
+vrf definition FRONTDOOR
+address-family ipv4
+exit
+ip route vrf FRONTDOOR 0.0.0.0 0.0.0.0 {{ host.facts.vrf.peer_ip }}
