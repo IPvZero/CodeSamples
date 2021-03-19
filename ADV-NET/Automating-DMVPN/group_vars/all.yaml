@@ -1,0 +1,20 @@
+---
+
+dmvpn:
+    hub:
+        tunnel_ip: 172.16.1.1
+        tunnel_mask: 255.255.255.0
+        global_ip: 201.0.0.1
+        global_mask: 255.255.255.252
+
+    tunnel_range: 172.16.1.0/24
+    net_id: 1
+    holdtime: 300
+    tunnel_key: 1
+    authentication: pass1
+    ipsec:
+        key: CRYPTKEY
+        name: DMVPN
+
+bgp:
+    as: 65001
