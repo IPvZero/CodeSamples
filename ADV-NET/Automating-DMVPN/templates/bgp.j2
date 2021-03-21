@@ -8,7 +8,6 @@ router bgp {{ host.group_facts.bgp.as }}
 {% if host.facts.dmvpn.type == 'Hub' %}
 neighbor {{ host.facts.bgp.peer_group }} peer-group
 neighbor {{ host.facts.bgp.peer_group }} remote-as {{ host.group_facts.bgp.as }}
-neighbor {{ host.facts.bgp.peer_group }} route-reflector-client
 neighbor {{ host.facts.bgp.peer_group }} update-source tunnel0
 neighbor {{ host.facts.bgp.peer_group }} default-originate
 neighbor {{ host.facts.bgp.peer_group }} route-map DEFAULT_ONLY out
