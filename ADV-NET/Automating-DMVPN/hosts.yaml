@@ -1,6 +1,6 @@
 ---
 
-R1:
+Hub:
     hostname: 192.168.31.101
     groups:
         - cisco_group
@@ -9,7 +9,7 @@ R1:
         dmvpn: yes
 
 
-R2:
+Spoke1:
     hostname: 192.168.31.102
     groups:
         - cisco_group
@@ -19,7 +19,7 @@ R2:
 
 
 
-R3:
+Spoke2:
     hostname: 192.168.31.103
     groups:
         - cisco_group
@@ -29,7 +29,7 @@ R3:
 
 
 
-R4:
+Spoke3:
     hostname: 192.168.31.104
     groups:
         - cisco_group
