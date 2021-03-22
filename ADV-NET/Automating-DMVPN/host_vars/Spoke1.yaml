@@ -1,0 +1,12 @@
+---
+dmvpn:
+    tunnel_ip: 172.16.1.2 255.255.255.0
+    type: Spoke
+    source:
+        int: gig0/1
+        ip: 202.0.0.1 255.255.255.252
+    hub:
+        tunnel_ip: 172.16.1.1
+
+vrf:
+    peer_ip: 202.0.0.2
