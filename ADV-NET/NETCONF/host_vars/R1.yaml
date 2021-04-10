@@ -1,0 +1,40 @@
+native:
+  _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-native'
+  router:
+    _operation: replace
+    router-ospf:
+      ospf:
+        process-id:
+          id: '68'
+          network:
+            - ip: 13.13.13.13
+              wildcard: 0.0.0.0
+              area: '13'
+            - ip: 33.33.33.33
+              wildcard: 0.0.0.0
+              area: '33'
+          router-id: 68.68.68.68
+      _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ospf'
+    ospf:
+      id: '68'
+      auto-cost:
+        reference-bandwidth: '100'
+      timers:
+        throttle:
+          spf:
+            delay: '50'
+            min-delay: '200'
+            max-delay: '5000'
+      router-id: 68.68.68.68
+      compatible:
+        rfc1583: ''
+      _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ospf'
+
+  ntp:
+    _operation: replace
+    server:
+      server-list:
+        - ip-address: 2.3.4.5
+        - ip-address: 6.6.6.6
+        - ip-address: 9.8.7.2
+      _xmlns: 'http://cisco.com/ns/yang/Cisco-IOS-XE-ntp'
