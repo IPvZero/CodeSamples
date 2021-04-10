@@ -1,0 +1,6 @@
+R1:
+    username: developer
+    password: C1sco12345
+    hostname: "sandbox-iosxe-latest-1.cisco.com"
+    groups:
+        - cisco_group
