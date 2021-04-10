@@ -1,0 +1,43 @@
+ <config>
+    <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+      <router operation="replace">
+        <router-ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+          <ospf>
+            <process-id>
+              <id>33</id>
+              <network>
+                <ip>33.33.33.33</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>33</area>
+              </network>
+              <network>
+                <ip>13.13.13.13</ip>
+                <wildcard>0.0.0.0</wildcard>
+                <area>13</area>
+              </network>
+              <router-id>33.33.33.33</router-id>
+            </process-id>
+          </ospf>
+        </router-ospf>
+        <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+          <id>33</id>
+          <auto-cost>
+            <reference-bandwidth>100</reference-bandwidth>
+          </auto-cost>
+          <timers>
+            <throttle>
+              <spf>
+                <delay>50</delay>
+                <min-delay>200</min-delay>
+                <max-delay>5000</max-delay>
+              </spf>
+            </throttle>
+          </timers>
+          <router-id>33.33.33.33</router-id>
+          <compatible>
+            <rfc1583/>
+          </compatible>
+        </ospf>
+      </router>
+    </native>
+  </config>
