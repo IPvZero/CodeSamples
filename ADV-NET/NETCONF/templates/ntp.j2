@@ -1,0 +1,23 @@
+  <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <ntp xc:operation="replace" xmlns="http://cisco.com/ns/yang/Cisco-IOS-XR-ip-ntp-cfg">
+      <peer-vrfs>
+        <peer-vrf>
+          <vrf-name>default</vrf-name>
+          <peer-ipv4s>
+            <peer-ipv4>
+              <address-ipv4>2.2.2.2</address-ipv4>
+              <peer-type-ipv4>
+                <peer-type>server</peer-type>
+              </peer-type-ipv4>
+            </peer-ipv4>
+            <peer-ipv4>
+              <address-ipv4>88.88.88.88</address-ipv4>
+              <peer-type-ipv4>
+                <peer-type>server</peer-type>
+              </peer-type-ipv4>
+            </peer-ipv4>
+          </peer-ipv4s>
+        </peer-vrf>
+      </peer-vrfs>
+    </ntp>
+  </config>
