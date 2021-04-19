@@ -1,0 +1,55 @@
+---
+configure_acl:
+  openconfig-acl:acl:
+    acl-sets:
+      acl-set:
+      - name: IPvZero
+        type: openconfig-acl:ACL_IPV4
+        config:
+          name: IPvZero
+          type: openconfig-acl:ACL_IPV4
+        acl-entries:
+          acl-entry:
+          - sequence-id: 10
+            config:
+              sequence-id: 10
+            ipv4:
+              config:
+                protocol: openconfig-packet-match-types:IP_ICMP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: ANY
+            actions:
+              config:
+                forwarding-action: openconfig-acl:ACCEPT
+                log-action: openconfig-acl:LOG_NONE
+          - sequence-id: 20
+            config:
+              sequence-id: 20
+            ipv4:
+              config:
+                destination-address: 8.8.8.8/32
+                protocol: openconfig-packet-match-types:IP_TCP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: 22
+            actions:
+              config:
+                forwarding-action: openconfig-acl:DROP
+                log-action: openconfig-acl:LOG_NONE
+          - sequence-id: 30
+            config:
+              sequence-id: 30
+            ipv4:
+              config:
+                protocol: cisco-xe-openconfig-acl-ext:IP
+            transport:
+              config:
+                source-port: ANY
+                destination-port: ANY
+            actions:
+              config:
+                forwarding-action: openconfig-acl:ACCEPT
+                log-action: openconfig-acl:LOG_NONE
