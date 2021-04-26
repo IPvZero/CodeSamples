@@ -8,7 +8,7 @@ inventory:
         group_file: "groups.yaml"
         defaults_file: "defaults.yaml"
 
-runners:
+runner:
     plugin: threaded
     options:
         num_workers: 10
