@@ -8,7 +8,7 @@ inventory:
         group_file: "/home/ipvzero/Nornir3/groups.yaml"
         defaults_file: "/home/ipvzero/Nornir3/defaults.yaml"
 
-runners:
+runner:
     plugin: threaded
     options:
         num_workers: 10
