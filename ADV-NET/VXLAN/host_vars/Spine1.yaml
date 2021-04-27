@@ -1,0 +1,13 @@
+---
+
+loopback_zero: 192.168.0.1
+
+OSPF:
+    interfaces:
+        - Ethernet1/1
+        - Ethernet1/2
+
+BGP:
+    neighbors:
+        - 192.168.0.3
+        - 192.168.0.4
