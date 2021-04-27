@@ -1,0 +1,49 @@
+ip pim rp-address {{ host.group_facts.rp_addr }} group-list 224.0.0.0/4
+ip pim ssm range 232.0.0.0/8
+ip pim anycast-rp {{ host.group_facts.rp_addr }} {{ host.facts.loopback_zero }}
+
+router ospf UNDERLAY
+{% for intf in host.facts.OSPF.interfaces %}
+interface {{ intf }}
+no switchport
+mtu 9216
+medium p2p
+ip unnumbered loopback0
+ip ospf network point-to-point
+ip router ospf UNDERLAY area 0.0.0.0
+ip pim sparse-mode
+no shutdown
+
+{% endfor %}
+
+interface loopback0
+ip address {{ host.facts.loopback_zero }} 255.255.255.255
+ip ospf network point-to-point
+ip router ospf UNDERLAY area 0.0.0.0
+ip pim sparse-mode
+
+interface loopback1
+ip address {{ host.group_facts.rp_addr }} 255.255.255.255
+ip ospf network point-to-point
+ip router ospf UNDERLAY area 0.0.0.0
+ip pim sparse-mode
+
+router bgp {{ host.group_facts.BGP.asn }}
+address-family ipv4 unicast
+address-family l2vpn evpn
+retain route-target all
+template peer VXLAN_LEAF
+remote-as {{ host.group_facts.BGP.asn }}
+update-source loopback0
+address-family ipv4 unicast
+send-community extended
+route-reflector-client
+soft-reconfiguration inbound
+address-family l2vpn evpn
+send-community
+send-community extended
+route-reflector-client
+{% for peer in host.facts.BGP.neighbors %}
+  neighbor {{ peer }}
+    inherit peer VXLAN_LEAF
+{% endfor %}
