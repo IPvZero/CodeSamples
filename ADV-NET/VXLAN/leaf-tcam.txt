@@ -1,0 +1,2 @@
+hardware access-list tcam region vpc-convergence 0
+hardware access-list tcam region arp-ether 256
