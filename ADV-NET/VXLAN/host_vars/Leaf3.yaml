@@ -1,0 +1,31 @@
+---
+
+loopback_zero: 192.168.0.3
+
+vlans:
+    - name: 10
+      vni: 101010
+      L3VNI: False
+      svi_ip: 10.10.10.254 255.255.255.0 
+
+    - name: 20
+      vni: 202020
+      L3VNI: False
+      svi_ip: 10.10.20.254 255.255.255.0
+
+    - name: 99
+      vni: 99999
+      L3VNI: True
+
+OSPF:
+    interfaces:
+        - Ethernet1/1
+        - Ethernet1/2
+
+BGP:
+    neighbors:
+        - 192.168.0.1
+        - 192.168.0.2
+    advertising:
+        - 10.10.10.0/24
+        - 10.10.20.0/24
