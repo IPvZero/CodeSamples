@@ -1,0 +1,40 @@
+---
+
+Spine1:
+    username: "admin"
+    password: "admin"
+    hostname: 10.188.188.101
+    groups:
+        - cisco_group
+    data:
+        layer: Spine
+
+
+ 
+Spine2:
+    username: "admin"
+    password: "admin"
+    hostname:  10.188.188.102
+    groups:
+        - cisco_group
+    data:
+        layer: Spine
+
+Leaf3:
+    username: "admin"
+    password: "admin"
+    hostname: 10.188.188.103
+    groups:
+        - cisco_group
+    data:
+        layer: Leaf
+
+
+Leaf4:
+    username: "admin"
+    password: "admin"
+    hostname: 10.188.188.104
+    groups:
+        - cisco_group
+    data:
+        layer: Leaf
