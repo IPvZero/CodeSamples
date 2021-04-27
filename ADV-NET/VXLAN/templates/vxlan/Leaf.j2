@@ -1,0 +1,99 @@
+fabric forwarding anycast-gateway-mac 0000.0011.1234
+ip pim rp-address {{ host.group_facts.rp_addr }} group-list 224.0.0.0/4
+ip pim ssm range 232.0.0.0/8
+
+{% for vlan in host.facts.vlans %}
+vlan {{ vlan["name"] }}
+vn-segment {{ vlan["vni"] }}
+
+{% if vlan["L3VNI"] == True %}
+vrf context L3-ROUTING
+vni {{ vlan["vni"] }}
+  rd auto
+  address-family ipv4 unicast
+    route-target both auto
+    route-target both auto evpn
+
+interface vlan {{ vlan["name"] }}
+no shutdown
+vrf member L3-ROUTING
+ip forward
+
+{% else %}
+interface vlan {{ vlan["name"] }}
+no shutdown
+ip address {{ vlan["svi_ip"] }}
+fabric forwarding mode anycast-gateway
+
+{% endif %}
+{% endfor %}
+
+interface nve1
+  no shutdown
+  host-reachability protocol bgp
+  source-interface loopback0
+{% for vlan in host.facts.vlans %}
+{% if vlan["L3VNI"] == False %}
+ member vni {{ vlan["vni"] }}
+ suppress-arp
+ mcast-group 224.1.1.192
+{% else %}
+member vni {{ vlan["vni"] }} associate-vrf
+{% endif %}
+{% endfor %}
+
+router ospf UNDERLAY
+{% for intf in host.facts.OSPF.interfaces %}
+interface {{ intf }}
+no switchport
+mtu 9216
+medium p2p
+ip unnumbered loopback0
+ip ospf network point-to-point
+ip router ospf UNDERLAY area 0.0.0.0
+ip pim sparse-mode
+no shutdown
+
+{% endfor %}
+
+interface loopback0
+ip address {{ host.facts.loopback_zero }} 255.255.255.255
+ip ospf network point-to-point
+ip router ospf UNDERLAY area 0.0.0.0
+ip pim sparse-mode
+
+router bgp {{ host.group_facts.BGP.asn }}
+address-family ipv4 unicast
+address-family l2vpn evpn
+template peer VXLAN_SPINE
+remote-as {{ host.group_facts.BGP.asn }}
+update-source loopback0
+address-family ipv4 unicast
+send-community extended
+soft-reconfiguration inbound
+address-family l2vpn evpn
+send-community
+send-community extended
+{% for peer in host.facts.BGP.neighbors %}
+  neighbor {{ peer }}
+    inherit peer VXLAN_SPINE
+{% endfor %}
+vrf L3-ROUTING
+log-neighbor-changes
+address-family ipv4 unicast
+{% for ntwks in host.facts.BGP.advertising %}
+network {{ ntwks }}
+{% endfor %}
+advertise l2vpn evpn
+exit
+exit
+exit
+evpn
+{% for vlan in host.facts.vlans %}
+{% if vlan["L3VNI"] == False %}
+vni {{ vlan["vni"] }} l2
+rd auto
+route-target import auto
+route-target export auto
+{% endif %}
+{% endfor %}
