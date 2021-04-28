@@ -1,4 +1,3 @@
-import logging
 from nornir import InitNornir
 from nornir_utils.plugins.functions import print_result
 from nornir_scrapli.tasks import send_configs
