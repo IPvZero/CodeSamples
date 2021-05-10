@@ -1,0 +1,32 @@
+<config>
+<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <vrf operation="replace">
+{% for vrf in host.facts.vrfs %}
+      <definition>
+        <name>{{ vrf["name"] }}</name>
+{% if vrf["rd"] is defined %}
+        <rd>{{ vrf["rd"] }}</rd>
+{% endif %}
+        <address-family>
+          <ipv4/>
+        </address-family>
+{% if vrf["targets"] is defined %}
+        <route-target>
+{% for target in vrf["targets"] %}
+{% if target["direction"] == "export" %}
+          <export>
+            <asn-ip>{{ target["target_rd"] }}</asn-ip>
+          </export>
+{% elif target["direction"] == "import" %}
+          <import>
+            <asn-ip>{{ target["target_rd"] }}</asn-ip>
+          </import>
+{% endif %}
+{% endfor %}
+        </route-target>
+{% endif %}
+      </definition>
+{% endfor %}
+    </vrf>
+  </native>
+</config>
