@@ -1,0 +1,89 @@
+ <config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+      <router operation="replace">
+        <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
+          <id>{{ host.facts.BGP.ASN }}</id>
+          <bgp>
+            <log-neighbor-changes>true</log-neighbor-changes>
+          </bgp>
+{% for neighbor in host.facts.BGP.neighbors %}
+          <neighbor>
+            <id>{{ neighbor }}</id>
+            <remote-as>{{ host.facts.BGP.ASN }}</remote-as>
+            <update-source>
+              <Loopback>0</Loopback>
+            </update-source>
+          </neighbor>
+{% endfor %}
+          <address-family>
+{% if host.facts.BGP.vrfs is defined %}
+            <with-vrf>
+              <ipv4>
+                <af-name>unicast</af-name>
+{% for vrf in host.facts.BGP.vrfs %}
+                <vrf>
+                  <name>{{ vrf["name"] }}</name>
+                  <ipv4-unicast>
+                    <redistribute>
+                      <ospf>
+                        <id>{{ vrf["redistribute_process"] }}</id>
+                        <vrf>
+                          <name>{{ vrf["name"] }}</name>
+                        </vrf>
+                      </ospf>
+                    </redistribute>
+                  </ipv4-unicast>
+                </vrf>
+{% endfor %}
+              </ipv4>
+            </with-vrf>
+{% endif %}
+            <no-vrf>
+              <vpnv4>
+                <af-name>unicast</af-name>
+                <vpnv4-unicast>
+{% for neighbor in host.facts.BGP.neighbors %}
+                  <neighbor>
+                    <id>{{ neighbor }}</id>
+                    <activate/>
+                    <send-community>
+                      <send-community-where>extended</send-community-where>
+                    </send-community>
+                  </neighbor>
+{% endfor %}                  
+                </vpnv4-unicast>
+              </vpnv4>
+            </no-vrf>
+          </address-family>
+        </bgp>
+{% if host.facts.OSPF is defined %}
+        <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+          <id>{{ host.facts.OSPF.process }}</id>
+          <router-id>{{ host.facts.OSPF.ospf_rid }}</router-id>
+          <mpls>
+            <ldp>
+              <autoconfig/>
+            </ldp>
+          </mpls>
+        </ospf>
+{% if host.facts.BGP.vrfs is defined %}
+{% for vrf in host.facts.BGP.vrfs %}
+        <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+          <id>{{ vrf["redistribute_process"] }}</id>
+          <vrf>{{ vrf["name"] }}</vrf>
+          <router-id>{{ vrf["ospf_rid"] }}</router-id>
+          <redistribute>
+            <bgp>
+              <as-number>{{ host.facts.BGP.ASN }}</as-number>
+              <redist-options>
+                <subnets/>
+              </redist-options>
+            </bgp>
+          </redistribute>
+        </ospf>
+{% endfor %}
+{% endif %}
+{% endif %}
+      </router>
+    </native>
+</config>
