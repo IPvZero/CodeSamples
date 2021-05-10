@@ -1,20 +1,20 @@
 ---
 vrfs:
   - name: GREEN 
-    rd: 25:3
+    rd: "25:3"
     targets:
       - direction: export
-        target_rd: "25:3"
+        target_tag: "25:3"
       - direction: import
-        target_rd: "25:3"
+        target_tag: "25:3"
 
   - name: RED 
-    rd: 25:2
+    rd: "25:2"
     targets:
       - direction: export
-        target_rd: "25:2"
+        target_tag: "25:2"
       - direction: import
-        target_rd: "25:2"
+        target_tag: "25:2"
 
   - name: MGMT
   
