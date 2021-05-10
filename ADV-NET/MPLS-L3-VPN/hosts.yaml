@@ -1,0 +1,29 @@
+---
+
+EDGE1:
+    username: "john"
+    password: "cisco"
+    hostname: 10.188.188.101
+    groups:
+        - cisco_group
+
+EDGE2:
+    username: "john"
+    password: "cisco"
+    hostname: 10.188.188.102
+    groups:
+        - cisco_group
+
+EDGE3:
+    username: "john"
+    password: "cisco"
+    hostname: 10.188.188.103
+    groups:
+        - cisco_group
+
+EDGE4:
+    username: "john"
+    password: "cisco"
+    hostname: 10.188.188.104
+    groups:
+        - cisco_group
