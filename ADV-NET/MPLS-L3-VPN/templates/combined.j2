@@ -15,11 +15,11 @@
 {% for target in vrf["targets"] %}
 {% if target["direction"] == "export" %}
           <export>
-            <asn-ip>{{ target["target_rd"] }}</asn-ip>
+            <asn-ip>{{ target["target_tag"] }}</asn-ip>
           </export>
 {% elif target["direction"] == "import" %}
           <import>
-            <asn-ip>{{ target["target_rd"] }}</asn-ip>
+            <asn-ip>{{ target["target_tag"] }}</asn-ip>
           </import>
 {% endif %}
 {% endfor %}
