@@ -1,0 +1,3 @@
+---
+arista_group:
+  platform: 'eos'
