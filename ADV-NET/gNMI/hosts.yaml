@@ -1,0 +1,15 @@
+R1:
+    username: "john"
+    password: "password1"
+    hostname: 192.168.31.101
+    port: "6030"
+    groups:
+        - arista_group
+
+R2:
+    username: "john"
+    password: "password1"
+    hostname: 192.168.31.102
+    port: "6030"
+    groups:
+        - arista_group
