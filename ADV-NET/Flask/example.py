@@ -1,7 +1,7 @@
 from flask import Flask, config, render_template
 from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
-from nornir.core.filter import F 
+from nornir.core.filter import F
 
 app = Flask(__name__)
 
@@ -10,14 +10,17 @@ app = Flask(__name__)
 def homepage_test():
     return render_template("base.html")
 
+
 @app.route("/newpage")
 def newpage_test():
     return render_template("newpage.html")
+
 
 @app.route("/hosts/inventory")
 def get_all_inventory():
     nr = InitNornir(config_file="config.yaml")
     return render_template("inventory.html", my_list=nr.inventory.hosts.values())
+
 
 @app.route("/all/running")
 def get_all_running():
@@ -26,12 +29,14 @@ def get_all_running():
     my_list = [v.scrapli_response.result for v in results.values()]
     return render_template("running.html", my_list=my_list)
 
+
 @app.route("/all/version")
 def get_all_version():
     nr = InitNornir(config_file="config.yaml")
     results = nr.run(task=send_command, command="show version")
     my_list = [v.scrapli_response.genie_parse_output() for v in results.values()]
     return render_template("version.html", my_list=my_list)
+
 
 @app.route("/hosts/<hostname>/version")
 def get_host_version(hostname):
@@ -40,10 +45,12 @@ def get_host_version(hostname):
     results = filtered.run(task=send_command, command="show version")
     my_list = [v.scrapli_response.genie_parse_output() for v in results.values()]
     return render_template("version.html", my_list=my_list)
-        
+
+
 @app.route("/greeting")
 def say_hello():
     return "Hello There!"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
