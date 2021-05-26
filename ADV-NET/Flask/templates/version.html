@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Version Information for all Devices</h4>
+{% for data in my_list %}
+{% if "hour" in data.version.uptime %}
+<div class="alert alert-success" role="alert">
+   <pre>
+    DEVICE: {{ data.version.hostname }}
+    VERSION: {{ data.version.version_short }}
+    UPTIME: {{ data.version.uptime }}
+    SERIAL NUMBER: {{ data.version.chassis_sn }}
+</pre>
+</div>
+{% else %}
+<div class="alert alert-danger" role="alert">
+   <pre>
+        DEVICE: {{ data.version.hostname }}
+        VERSION: {{ data.version.version_short }}
+        UPTIME: {{ data.version.uptime }}
+        SERIAL NUMBER: {{ data.version.chassis_sn }}
+    </pre>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock content %}
