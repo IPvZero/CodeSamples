@@ -1,0 +1,11 @@
+---
+
+cisco_group:
+  platform: 'ios'
+  connection_options:
+    scrapli:
+        extras:
+          port: 22
+          ssh_config_file: True
+          auth_strict_key: False
+          timeout_transport: 20
