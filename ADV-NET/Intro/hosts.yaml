@@ -1,0 +1,44 @@
+---
+
+R1:
+    hostname: "192.168.31.101"
+    groups:
+        - uk_group
+    data:
+        ntp_server: "1.2.3.4"
+
+
+R2:
+    hostname: "192.168.31.102"
+    groups:
+        - uk_group
+
+R3:
+    hostname: "192.168.31.103"
+    groups:
+        - uk_group
+
+R4:
+    hostname: "192.168.31.104"
+    groups:
+        - usa_group
+
+R5:
+    hostname: "192.168.31.105"
+    groups:
+        - usa_group
+
+R6:
+    hostname: "192.168.31.106"
+    groups:
+        - usa_group
+
+R7:
+    hostname: "192.168.31.107"
+    groups:
+        - usa_group
+
+R8:
+    hostname: "192.168.31.108"
+    groups:
+        - usa_group
