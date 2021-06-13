@@ -1,0 +1,7 @@
+---
+
+username: "john"
+password: "cisco"
+platform: "ios"
+data:
+    ntp_server: "9.9.9.9"
