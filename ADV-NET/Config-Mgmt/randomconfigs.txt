@@ -1,0 +1,4 @@
+ntp server 88.99.55.12
+snmp-server community IPvZero ro
+interface g0/0
+description THIS IS A TEST description
