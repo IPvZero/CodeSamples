@@ -1,0 +1,3 @@
+banner motd & THIS IS AN AUTOMATED BANNER &
+username lauren priv 15 secret supersecretpassword1
+ntp server 55.66.55.66
