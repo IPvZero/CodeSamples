@@ -1,0 +1,2 @@
+ntp server 55.55.55.55
+snmp-server community UNWANTED ro
