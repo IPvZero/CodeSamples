@@ -1,0 +1,9 @@
+---
+
+cisco_group:
+    platform: "ios"
+
+junos_group:
+    platform: "junos"
+    username: "john"
+    password: "Juniper1"
