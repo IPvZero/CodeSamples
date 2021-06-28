@@ -1,0 +1,21 @@
+---
+
+snmp:
+    snmp_community: "IPvZero2"
+
+NTP:
+    server: "3.4.5.6"
+
+bgp:
+    asn: "65001"
+    rid: 2.2.2.2
+    update_source: "loopback0"
+    route_reflector: True
+    peer_group: "PEERS"
+    neighbors:
+        - 1.1.1.1
+        - 4.4.4.4
+        - 5.5.5.5
+        - 6.6.6.6
+        - 7.7.7.7
+        - 8.8.8.8
