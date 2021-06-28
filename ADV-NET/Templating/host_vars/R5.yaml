@@ -1,0 +1,16 @@
+---
+
+snmp:
+    snmp_community: "IPvZero2"
+
+ospf:
+    ospf_rid: 5.5.5.5
+
+bgp:
+   asn: "65001"
+   rid: 5.5.5.5
+   update_source: "loopback0"
+   route_reflector: False
+   neighbors:
+       - 2.2.2.2
+       - 3.3.3.3
