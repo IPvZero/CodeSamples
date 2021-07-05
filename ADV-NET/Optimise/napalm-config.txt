@@ -1,0 +1,4 @@
+ntp server 77.77.77.77
+ntp server 33.44.66.21
+snmp-server community RANDOMTEST RO
+logging host 1.55.66.3
