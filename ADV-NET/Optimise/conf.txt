@@ -1,0 +1,4 @@
+snmp-server community CBTNUGGETS RO
+logging host 99.99.99.99
+int g0/0
+description THIS IS THE MGMT INTERFACE OF THIS ROUTER
