@@ -1,0 +1,20 @@
+---
+
+BGP:
+    ASN: "99"
+    peers:
+        - neighbor: "10.0.0.2"
+          peer_asn: "65002"
+
+        - neighbor: "10.0.0.3"
+          peer_asn: "65003"
+
+        - neighbor: "10.0.0.4"
+          peer_asn: "65004"
+
+        - neighbor: "10.0.0.5"
+          peer_asn: "65005"
+
+SNMP:
+    community: "TREVOR"
+    
