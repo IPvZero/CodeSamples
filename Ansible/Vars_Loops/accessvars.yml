@@ -1,0 +1,10 @@
+---
+
+- name: "Printing some var info"
+  hosts: uk
+  gather_facts: no
+
+  tasks:
+    - name: "Parse var stuff"
+      debug:
+        msg: "This device is Redistributing BGP ASN {{ hostvars[ansible_host]['ospf']['redistributing']['bgp'] }}"
