@@ -1,0 +1,4 @@
+---
+
+ntp: "5.5.5.5"
+eigrp_style: "named"
