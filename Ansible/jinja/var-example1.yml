@@ -1,0 +1,11 @@
+---
+
+- name: "Play to test some variable substition"
+  hosts: "usa"
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "Task 1"
+      cisco.ios.ios_config:
+        src: "bgp.j2"
