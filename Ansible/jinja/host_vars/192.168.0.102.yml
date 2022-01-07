@@ -1,0 +1,17 @@
+---
+
+ntp: "99.99.99.99"
+
+BGP:
+  ASN: "65002"
+  peers:
+    - neighbor: "10.0.0.1"
+      peer_asn: "65001"
+
+    - neighbor: "12.12.12.12"
+      peer_asn: "12"
+
+eigrp_style: "normal"
+
+eigrp: 
+  asn: "2"
