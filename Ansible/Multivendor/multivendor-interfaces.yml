@@ -1,0 +1,52 @@
+---
+
+- name: "Multivendor Fact-Gathering Playbook"
+  hosts: all
+  connection: network_cli
+
+  tasks:
+
+    - name: Merge provided configuration with device configuration
+      cisco.ios.ios_interfaces:
+        config:
+        - name: GigabitEthernet0/2
+          description: Configured and Merged by John at CBTN
+          enabled: true
+        - name: GigabitEthernet0/3
+          description: Configured and Merged by John at CBTN
+          mtu: 2800
+          enabled: false
+          speed: 100
+          duplex: full
+        state: merged
+      register: ios_facts
+      when: "ansible_network_os == 'cisco.ios.ios'"
+
+
+    - name: Merge provided configuration with device configuration
+      vyos.vyos.vyos_interfaces:
+        config:
+        - name: eth2
+          description: Configured by John at CBTN
+          enabled: true
+          vifs:
+          - vlan_id: 200
+            description: VIF 200 - ETH2
+
+        - name: eth3
+          description: Configured by Ansible
+          mtu: 1500
+
+        state: merged
+      register: vyos_facts
+      when: "ansible_network_os  == 'vyos.vyos.vyos'"
+
+    - name: "Print Cisco output" 
+      debug:
+        msg: "{{ ios_facts.commands }}"
+      when: "ansible_network_os == 'cisco.ios.ios'"
+
+    - name: "Print VyOS output"
+      debug:
+        msg: "{{ vyos_facts.commands }}"
+      when: "ansible_network_os == 'vyos.vyos.vyos'"
