@@ -1,0 +1,7 @@
+ospf: 
+  rid: "4.4.4.4"
+  networks:
+    - network: 10.2.4.0/24
+      area: 0
+    - network: 4.4.4.4/32
+      area: 44

@@ -1,0 +1,47 @@
+---
+
+- name: "OSPF Playbook"
+  hosts: all
+  connection: network_cli
+
+  tasks:
+    - name: "Push Cisco OSPF Config"
+      cisco.ios.ios_ospfv2:
+        config:
+          processes:
+            - process_id: 1
+              router_id: "{{ ospf.rid }}"
+              network:
+                - address: 13.14.15.0
+                  wildcard_bits: 0.0.0.255
+                  area: 13
+                - address: 10.0.0.0
+                  wildcard_bits: 0.0.0.255
+                  area: 0
+        state: merged
+      register: cisco_output
+      when: "ansible_network_os == 'cisco.ios.ios'"
+
+    - name: "Print Cisco Output"
+      debug:
+        msg: "{{ cisco_output }}"
+      when: "ansible_network_os == 'cisco.ios.ios'"
+
+    - name: "Push Cisco VYOS Config"
+      vyos.vyos.vyos_ospfv2:
+        config:
+          areas:
+            - area_id: '0'
+              network:
+                - address: "10.2.0.0/16"
+                - address: "12.13.0.0/16"
+        state: replaced
+      register: vyos_output
+      when: "ansible_network_os == 'vyos.vyos.vyos'"
+
+    - name: "Print VYOS Output"
+      debug:
+        msg: "{{ vyos_output }}"
+      when: "ansible_network_os == 'vyos.vyos.vyos'"
+
+    
