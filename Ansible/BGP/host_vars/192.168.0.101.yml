@@ -1,0 +1,26 @@
+---
+
+ospf:
+  default_originate: true
+  rid: "1.1.1.1"
+  networks:
+    - network: "10.1.2.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+
+    - network: "10.55.2.0"
+      wildcard: "0.0.0.255"
+      area: "57"
+
+bgp:
+  asn: "1"
+  rid: "1.1.1.1"
+  neighbors:
+    - neighbor: "10.1.2.2"
+      peer_asn: "2"
+  networks:
+    - network: "99.99.99.99"
+      mask: "255.255.255.255"
+    - network: "100.100.100.100"
+      mask: "255.255.255.255"
+      

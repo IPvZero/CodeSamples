@@ -1,0 +1,30 @@
+---
+
+- name: "BGP Configs via Jinja"
+  hosts: all
+  connection: network_cli
+
+  tasks:
+    - name: "Configure VyOS BGP"
+      vyos.vyos.vyos_config:
+        src: "{{ ansible_network_os }}-bgp.j2"
+      register: vyos_output
+      when: "ansible_network_os == 'vyos.vyos.vyos'"
+
+    - name: "Print VyOS config"
+      debug:
+        msg: "{{ vyos_output }}"
+      when: "ansible_network_os == 'vyos.vyos.vyos'"
+
+    - name: "Configure Cisco BGP"
+      cisco.ios.ios_config:
+        src: "{{ ansible_network_os }}-bgp.j2"
+        #match: "none"
+      register: cisco_output
+      when: "ansible_network_os == 'cisco.ios.ios'"
+
+
+    - name: "Print Cisco config"
+      debug:
+        msg: "{{ cisco_output }}"
+      when: "ansible_network_os == 'cisco.ios.ios'"

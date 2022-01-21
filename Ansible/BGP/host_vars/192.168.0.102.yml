@@ -1,0 +1,25 @@
+---
+ospf:
+  default_originate: false
+  rid: "2.2.2.2"
+  networks:
+    - network: "10.1.2.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+    - network: "10.2.3.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+    - network: "10.2.4.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+
+bgp:
+  asn: "2"
+  rid: "2.2.2.2"
+  neighbors:
+    - neighbor: "10.1.2.1"
+      peer_asn: "1"
+    - neighbor: "10.2.3.2"
+      peer_asn: "3"
+    - neighbor: "10.2.4.2"
+      peer_asn: "4"

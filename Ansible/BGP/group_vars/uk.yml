@@ -1,0 +1,9 @@
+---
+
+snmp_stuff:
+  community: "cbtnuggets"
+  server: 6.6.1.2
+  mode: "RW"
+  location: "Oregon"
+  contact: "John McGovern"
+
