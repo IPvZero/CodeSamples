@@ -1,0 +1,17 @@
+---
+
+- name: "VLAN Configs via Jinja"
+  hosts: cisco
+  connection: network_cli
+
+  tasks:
+
+    - name: "Configure Cisco VLAN"
+      cisco.ios.ios_config:
+        src: "{{ ansible_network_os }}-vlans.j2"
+        #match: "none"
+      register: cisco_output
+
+    - name: "Print Cisco config"
+      debug:
+        msg: "{{ cisco_output }}"

@@ -1,0 +1,10 @@
+---
+
+- name: "VLAN Configs via Jinja"
+  hosts: 192.168.0.101
+  connection: network_cli
+
+  tasks:
+
+    - name: "Configure Cisco VLAN"
+      template: src={{ ansible_network_os }}-vlans.j2 dest=s1.conf

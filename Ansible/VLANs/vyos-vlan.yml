@@ -1,0 +1,31 @@
+---
+
+- name: "VLAN Playbook"
+  hosts: vyos
+  connection: network_cli
+
+  tasks:
+    - name: Create vlan
+      vyos.vyos.vyos_vlan:
+        aggregate:
+          - vlan_id: 10
+            name: TEN
+            interfaces: eth1
+            state: present
+          - vlan_id: 33
+            name: THIRTYTHREE
+            interfaces: eth2
+            state: present
+          - vlan_id: 42
+            name: FOURTWO
+            interfaces: eth3
+            state: present
+      register: vyos_output
+
+
+    - name: "Print Cisco Output"
+      debug:
+        msg: "{{ vyos_output }}"
+
+
+

@@ -1,0 +1,18 @@
+{% for vl in vlans.vlan %}
+vlan {{ vl.number }}
+name {{ vl.name }}
+interface vlan {{ vl.number }}
+ip address {{ vl.svi }}
+exit
+{% endfor %}
+{% for intf in vlans.interfaces %}
+{% if intf.mode == "access" %}
+interface {{ intf.interface}}
+switchport mode access
+switch access vlan {{ intf.vlan }}
+{% else %}
+interface {{ intf.interface }}
+switchport trunk encapsulation dot1q
+switchport mode trunk
+{% endif %}
+{% endfor %}

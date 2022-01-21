@@ -1,0 +1,26 @@
+---
+
+- name: "VLAN Playbook"
+  hosts: cisco
+  connection: network_cli
+
+  tasks:
+    - name: "Push Cisco VLAN Config"
+      cisco.ios.ios_l2_interfaces:
+        config:
+        - name: "{{ item.interface }}"
+          mode: access
+          access:
+            vlan: "{{ item.vlan }}"
+        state: merged
+      register: cisco_output
+      loop: "{{ vlans.interfaces }}"
+      when: item.mode == "access"
+
+
+    - name: "Print Cisco Output"
+      debug:
+        msg: "{{ cisco_output }}"
+
+
+
