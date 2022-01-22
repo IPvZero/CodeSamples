@@ -1,0 +1,19 @@
+---
+
+- name: "Playbook to test NAPALM-Ansible"
+  hosts: all
+  connection: network_cli
+
+  tasks:
+    - name: "Retrieve device facts from via NAPALM"
+      napalm_get_facts:
+        hostname: "{{ inventory_hostname }}"
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        dev_os: "{{ napalm_platform }}"
+
+      register: result
+
+    - name: "Print Result"
+      debug:
+        msg: "{{ result }}"

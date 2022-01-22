@@ -1,0 +1,9 @@
+---
+
+- get_facts:
+    hostname: S4
+    model: vEOS-lab
+    os_version: 4.27.0F-24305004.4270F
+    serial_number: 11151B9578E35E9784311D770BC54901
+    vendor: Arista
+

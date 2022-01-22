@@ -1,0 +1,9 @@
+[all]
+S1 ansible_host=192.168.0.101
+S2 ansible_host=192.168.0.102
+
+[arista]
+S1
+
+[cisco]
+S2

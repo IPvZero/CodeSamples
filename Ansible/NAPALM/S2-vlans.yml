@@ -1,0 +1,38 @@
+---
+
+- get_vlans: 
+    '1':
+      interfaces:
+        list:
+        - GigabitEthernet0/1
+        - GigabitEthernet0/2
+        - GigabitEthernet0/3
+        - GigabitEthernet1/0
+        - GigabitEthernet1/1
+        - GigabitEthernet1/2
+        - GigabitEthernet1/3
+      name: default
+    '5':
+      interfaces: 
+        list: []
+      name: FIVE
+    '10':
+      interfaces: 
+        list: []
+      name: TEN
+    '1002':
+      interfaces: 
+        list: []
+      name: fddi-default
+    '1003':
+      interfaces: 
+        list: []
+      name: token-ring-default
+    '1004':
+      interfaces: 
+        list: []
+      name: fddinet-default
+    '1005':
+      interfaces: 
+        list: []
+      name: trnet-default

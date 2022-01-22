@@ -1,0 +1,6 @@
+---
+- get_facts:
+    hostname: S2
+    model: IOSv
+    serial_number: 9C5IGAU92LU
+    vendor: Cisco

@@ -1,0 +1,20 @@
+---
+
+- name: "Play to Validate Devices"
+  hosts: all
+  connection: network_cli
+
+  tasks:
+    - name: "Task1 - use NAPALM Validate"
+      napalm_validate:
+        hostname: "{{ ansible_host }}"
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        dev_os: "{{ napalm_platform }}"
+        validation_file: "{{ inventory_hostname }}-vlans.yml"
+      register: result
+      ignore_errors: yes
+
+    - name: "Task1 - print the result"
+      debug:
+        msg: "{{ result }}"

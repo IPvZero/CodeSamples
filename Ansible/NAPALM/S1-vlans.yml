@@ -1,0 +1,19 @@
+---
+- get_vlans:
+    '1':
+      interfaces:
+      - Ethernet8
+      - Ethernet2
+      - Ethernet3
+      - Ethernet1
+      - Ethernet6
+      - Ethernet7
+      - Ethernet4
+      - Ethernet5
+      name: default
+    '5':
+      interfaces: []
+      name: FIVE
+    '10':
+      interfaces: []
+      name: TEN
