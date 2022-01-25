@@ -1,0 +1,47 @@
+---
+ospf:
+  default_originate: false
+  rid: "2.2.2.2"
+  networks:
+    - network: "10.1.2.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+    - network: "10.2.3.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+    - network: "10.2.4.0"
+      wildcard: "0.0.0.255"
+      area: "0"
+
+bgp:
+  asn: "2"
+  rid: "2.2.2.2"
+  neighbors:
+    - neighbor: "10.1.2.1"
+      peer_asn: "1"
+    - neighbor: "10.2.3.2"
+      peer_asn: "3"
+    - neighbor: "10.2.4.2"
+      peer_asn: "4"
+
+vlans:
+  interfaces:
+    - interface: "G0/3"
+      mode: access
+      vlan: 5
+
+    - interface: "G1/0"
+      mode: access
+      vlan: 10
+
+    - interface: "G0/1"
+      mode: trunk
+  
+  vlan:
+    - number: 5
+      name: "FIVE"
+      svi: "192.168.5.2 255.255.255.0"
+
+    - number: 10
+      name: "TEN"
+      svi: "192.168.10.2 255.255.255.0"

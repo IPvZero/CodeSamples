@@ -1,0 +1,8 @@
++hostname S2-updated
++ip domain-name ********.com
+-hostname NEWRUNNINGHOSTNAME
+-ip domain-name cisco.com
+-archive
+ -path flash:archive
+ -write-memory
+-ip scp server enable

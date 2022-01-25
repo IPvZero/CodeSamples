@@ -1,0 +1,43 @@
+! Command: show startup-config
+! Startup-config last modified at Mon Jan 24 01:12:13 2022 by john
+! device: S1 (vEOS-lab, EOS-4.27.0F)
+!
+! boot system flash:/vEOS-lab.swi
+!
+no aaa root
+!
+username john privilege 15 secret sha512 $6$ATBT5qAqpfqSzRqs$zj7zBpG/c7BHqOIa/cXtKTpE7QT.4dkijhetgwh5U.rRu3Y.ctuTcAByB7mQqS.lrmIvc7qNs9.RssT.K4On51
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model ribd
+!
+hostname S1
+!
+spanning-tree mode mstp
+!
+management api http-commands
+   no shutdown
+!
+interface Ethernet1
+!
+interface Ethernet2
+!
+interface Ethernet3
+!
+interface Ethernet4
+!
+interface Ethernet5
+!
+interface Ethernet6
+!
+interface Ethernet7
+!
+interface Ethernet8
+!
+interface Management1
+   ip address 192.168.0.101/24
+!
+no ip routing
+!
+end
