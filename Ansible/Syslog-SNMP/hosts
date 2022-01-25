@@ -1,0 +1,13 @@
+[all]
+R1 ansible_host=192.168.0.101
+R2 ansible_host=192.168.0.102
+R3 ansible_host=192.168.0.103
+R4 ansible_host=192.168.0.104
+
+[cisco]
+R1
+R2
+
+[vyos]
+R3
+R4

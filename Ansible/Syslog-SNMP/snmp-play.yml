@@ -1,0 +1,46 @@
+---
+
+- name: "SNMP Playbook"
+  hosts: cisco
+  connection: network_cli
+
+  tasks:
+    - name: Apply the provided configuration
+      cisco.ios.ios_snmp_server:
+        config:
+          communities:
+          -   acl_v4: testACL
+              name: mergedComm
+              rw: true
+          contact: John McGovern - IPvZero
+          engine_id:
+          -   id: AB0C5342FF0F
+              remote:
+                  host: 172.16.0.12
+                  udp_port: 25
+          groups:
+          -   group: mergedGroup
+              version: v3
+              version_option: auth
+          file_transfer:
+                  access_group: test
+                  protocol:
+                  - ftp
+          hosts:
+          -   community_string: mergedComm
+              host: 172.16.2.9
+              informs: true
+              traps:
+              - msdp
+              - stun
+              - pki
+              version: 2c
+        state: merged
+
+      register: snmp_output
+
+    - name: "Print SNMP"
+      debug:
+        msg: "{{ snmp_output }}"
+
+      

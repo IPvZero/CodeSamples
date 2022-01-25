@@ -1,0 +1,93 @@
+- name: "Play 1 - target Cisco Devices"
+  hosts: cisco
+  connection: network_cli
+
+  tasks: 
+    - name: "Push IP Configs to Cisco"
+      cisco.ios.ios_logging_global:
+        config:
+          hosts:
+            - hostname: "{{ item.ip }}"
+
+        state: merged
+      loop: "{{ syslog.hosts }}"
+      when: item.port is not defined
+      register: task1_output
+
+    - name: "Push IP/Port Configs to Cisco"
+      cisco.ios.ios_logging_global:
+        config:
+          hosts:
+            - hostname: "{{ item.ip }}"
+              transport:
+                tcp:
+                  port: "{{ item.port }}"
+
+        state: merged
+      loop: "{{ syslog.hosts }}"
+      when: item.port is defined
+      register: task2_output
+
+    - name: "Print Task 1 Output for Cisco"
+      debug:
+        msg: "{{ item.commands }}"
+      loop: "{{ task1_output.results }}"
+      loop_control:
+        label: none
+      when: item.commands is defined
+
+    - name: "Print Task 2 Output for Cisco"
+      debug:
+        msg: "{{ item.commands }}"
+      loop: "{{ task2_output.results }}"
+      loop_control:
+        label: none
+      when: item.commands is defined
+
+- name: "Play 2 - target VYOS"
+  hosts: vyos 
+  connection: network_cli
+
+  tasks:
+    - name: Apply the provided configuration
+      vyos.vyos.vyos_logging_global:
+        config:
+          console:
+            facilities:
+              - facility: local7
+                severity: err
+          files:
+            - path: logFile
+              archive:
+                file_num: 2
+              facilities:
+                - facility: local6
+                  severity: emerg
+          hosts:
+            - hostname: 172.16.0.1
+              facilities:
+                - facility: local7
+                  severity: all
+                - facility: all
+                  protocol: udp
+              port: 223
+          users:
+            - username: vyos
+              facilities:
+              - facility: local7
+                severity: debug
+          global_params:
+            archive:
+              file_num: 2
+              size: 111
+            facilities:
+            - facility: cron
+              severity: debug
+            marker_interval: 111
+            preserve_fqdn: true
+        state: merged
+      register: vyos_output
+
+    - name: "Print VYOS output"
+      debug:
+        msg: "{{ vyos_output }}"
