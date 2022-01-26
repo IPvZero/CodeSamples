@@ -1,0 +1,42 @@
+---
+
+- name: "Configure Device via RESTCONF"
+  hosts: R1
+  connection: local
+  tasks:
+
+    - name: "Task 1 - Configure OSPF"
+      uri:
+        url: "https://{{ ansible_host }}/restconf/data/native/router"
+        user: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        method: PUT
+        headers:
+          Accept:
+            application/yang-data+json,
+            application/yang-data.errors+json
+          Content-Type: 'application/yang-data+json'
+        body_format: json 
+        body: "{{ ospf_configure }}"
+        validate_certs: false
+        status_code:
+          - 200
+          - 204
+
+    - name: "Task 2 - Configure ACL"
+      uri:
+        url: "https://{{ ansible_host }}/restconf/data/native/ip/access-list"
+        user: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        method: PUT
+        headers:
+          Accept:
+            application/yang-data+json,
+            application/yang-data.errors+json
+          Content-Type: 'application/yang-data+json'
+        body_format: json 
+        body: "{{ acl_configure }}"
+        validate_certs: false
+        status_code:
+          - 200
+          - 204

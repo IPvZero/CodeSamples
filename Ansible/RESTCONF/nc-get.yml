@@ -1,0 +1,8 @@
+---
+- hosts: R1
+  gather_facts: false
+  connection: ansible.netcommon.netconf
+  tasks:
+
+    - name: Get running configuration and state data
+      ansible.netcommon.netconf_get:

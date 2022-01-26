@@ -1,0 +1,31 @@
+ospf_configure:
+  Cisco-IOS-XE-native:router:
+    Cisco-IOS-XE-ospf:ospf:
+    - id: 1
+      network:
+      - area: 51
+        ip: 1.1.1.1
+        mask: 0.0.0.0
+      - area: 0
+        ip: 10.0.0.0
+        mask: 0.0.0.255
+      - area: 16
+        ip: 172.16.0.0
+        mask: 0.0.255.255
+      router-id: 1.1.1.1
+
+acl_configure:
+  Cisco-IOS-XE-native:access-list:
+    Cisco-IOS-XE-acl:extended:
+    - access-list-seq-rule:
+      - ace-rule:
+          action: deny
+          dscp: ef
+          dst-any:
+          -
+          host: 6.7.1.2
+          protocol: ip
+        sequence: '55'
+      name: IPvZero123
+    - name: meraki-fqdn-dns
+
