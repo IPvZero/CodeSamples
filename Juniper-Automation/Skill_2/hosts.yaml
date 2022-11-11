@@ -1,0 +1,13 @@
+---
+hostname: "192.168.4.101"
+username: "john"
+password: "Juniper1"
+device: "juniper"
+bgp:
+  asn: "65001"
+  neighbors:
+    - "1.1.1.1"
+    - "3.3.3.3"
+  networks:
+    - "10.0.0.0/24"
+    - "192.168.1.0/24"
