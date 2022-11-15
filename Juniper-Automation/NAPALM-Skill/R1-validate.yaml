@@ -1,0 +1,7 @@
+---
+- get_facts:
+    hostname: R1CHANGE
+    model: VMX
+    os_version: 18.2R1.9
+    serial_number: VM636C464D62
+    vendor: Juniper

@@ -1,0 +1,6 @@
+<rpc>
+    <interface>
+        <name>Eth1</name>
+        <ip-address>8.8.8.8</ip-address>
+    </interface>
+</rpc>
