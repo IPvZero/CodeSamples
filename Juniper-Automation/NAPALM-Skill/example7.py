@@ -1,6 +1,5 @@
 from napalm import get_network_driver
 from rich import print as rprint
-import yaml
 
 juniper_device = get_network_driver("junos")
 
