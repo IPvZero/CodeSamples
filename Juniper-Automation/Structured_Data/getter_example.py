@@ -14,7 +14,7 @@ def connect_cisco(hostname, username, password):
 
 
 def connect_juniper(hostname, username, password):
-    """Function to Connecto to Juniper platforms"""
+    """Function to Connect to Juniper platforms"""
 
     juniper_device = get_network_driver("junos")
     with juniper_device(
