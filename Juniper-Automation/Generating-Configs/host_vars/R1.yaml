@@ -9,5 +9,5 @@ SNMP:
   - community: "IPvzero11"
 
 BGP:
-  ASN: "65001"
+  ASN: "65007"
   ASN_TYPE: "private"
