@@ -6,7 +6,7 @@ OSPF:
     area: "0.0.0.0"
 
 SNMP:
-  - community: "IPvzero1"
+  - community: "IPvzero11"
 
 BGP:
   ASN: "65001"
