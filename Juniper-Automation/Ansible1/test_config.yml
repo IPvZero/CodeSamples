@@ -1,0 +1,17 @@
+---
+
+- name: "Testing basic configuration"
+  hosts: all
+
+  tasks:
+    - name: "Push some SNMP info"
+      junipernetworks.junos.junos_config:
+        lines:
+        - set snmp community Ansible1
+        - set snmp community Ansible2
+    
+      register: junos_conf
+    
+    - name: "Print the config"
+      debug:
+        msg: "{{ junos_conf }}"

@@ -1,0 +1,11 @@
+---
+
+- name: "Enable NETCONF on devices"
+  hosts: all
+  connection: network_cli
+
+  tasks:
+    - name: "enable the netconf config"
+      junipernetworks.junos.junos_netconf:
+        listens_on: 830
+        state: present

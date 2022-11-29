@@ -1,0 +1,15 @@
+---
+
+- name: "Get Facts Play"
+  hosts: europe
+
+  tasks:
+    - name: "Retrieve facts from device"
+      junipernetworks.junos.junos_facts:
+        gather_subset: config
+        config_format: json
+      register: junos_output
+    
+    - name: "Print the junos_output variable"
+      debug:
+        msg: "{{ junos_output.ansible_facts.ansible_net_config }}"
