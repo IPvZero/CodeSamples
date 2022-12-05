@@ -1,0 +1,16 @@
+---
+
+- name: "Testing some loops"
+  hosts: juniper
+
+  tasks:
+    - name: "Pulling some facts from device"
+      junipernetworks.junos.junos_facts:
+        gather_subset: config
+        config_format: json
+      register: results
+    
+    - name: "Print the output"
+      debug:
+        msg: "{{ inventory_hostname }} has an snmp community of {{ item.name }}"
+      loop: "{{ results.ansible_facts.ansible_net_config.configuration.snmp.community }}"

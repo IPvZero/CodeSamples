@@ -1,0 +1,18 @@
+---
+
+all:
+  children:
+    europe:
+      children:
+        uk:
+          hosts:
+            R1:
+              ansible_host: 192.168.4.102
+        germany:
+          hosts:
+            R2:
+              ansible_host: 192.168.4.102
+        spain:
+          hosts:
+            R3:
+              ansible_host: 192.168.4.103

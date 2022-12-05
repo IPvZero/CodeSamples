@@ -1,0 +1,8 @@
+---
+- name: "Reading some vars"
+  hosts: all
+  
+  tasks:
+    - name: "print some variable stuff"
+      debug:
+        msg: "{{ hostvars[inventory_hostname] }}"
