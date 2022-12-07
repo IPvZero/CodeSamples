@@ -1,0 +1,24 @@
+---
+- name: "Demo of handler"
+  hosts: juniper
+
+  tasks:
+    - name: "Push some NTP config"
+      junipernetworks.junos.junos_config:
+        src: "ntp.j2"
+      notify:
+        - ntp_handler_blah
+        - print_output
+  
+  handlers:
+    - name: "Pushing Show Command to Device"
+      listen: ntp_handler_blah
+      junipernetworks.junos.junos_command:
+        commands:
+        - show configuration system ntp
+      register: ntp_show
+    
+    - name: "Printing the output of the show command"
+      listen: print_output
+      debug:
+        msg: "{{ ntp_show }}"

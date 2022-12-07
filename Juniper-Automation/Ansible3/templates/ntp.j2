@@ -1,0 +1,6 @@
+{% if NTP is defined %}
+delete system ntp
+{% for line in NTP %}
+set system ntp server {{ line["server"] }}
+{% endfor %}
+{% endif %}

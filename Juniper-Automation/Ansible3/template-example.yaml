@@ -1,0 +1,14 @@
+---
+- name: "Testing stuff"
+  hosts: juniper
+
+  tasks:
+    
+    - name: "Test templates"
+      junipernetworks.junos.junos_config:
+        src: "ntp.j2"
+      register: result
+
+    - name: "Print the result"
+      debug:
+        msg: "{{ result }}"
