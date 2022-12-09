@@ -1,0 +1,8 @@
+---
+
+ansible_user: "john"
+ansible_password: "Juniper1"
+ansible_network_os: junipernetworks.junos.junos
+ansible_connection: ansible.netcommon.netconf
+napalm_platform: "junos"
+

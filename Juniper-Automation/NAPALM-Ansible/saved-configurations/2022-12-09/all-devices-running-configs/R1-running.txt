@@ -1,0 +1,104 @@
+
+## Last commit: 2022-12-07 17:27:41 UTC by john
+version 18.2R1.9;
+groups {
+    global {
+        interfaces {
+            lo0 {
+                unit 0 {
+                    family inet {
+                        address 11.44.55.11/32;
+                        address 44.87.11.99/32;
+                    }
+                }
+            }
+        }
+    }
+}
+system {
+    login {
+        user john {
+            full-name "John McGovern";
+            uid 2000;
+            class super-user;
+            authentication {
+                encrypted-password "$6$7KbJ6XlN$g1GANAKfIl.n7Ba7DdC0dRLe92UzfuMXkkQ9ktaSY1tV1OJX4u94in18DC22SgopdSFVkNx/SbBs5QG34HIpr/";
+            }
+        }
+    }
+    root-authentication {
+        encrypted-password "$6$A.n05Nlg$Wd6ez4BbUagF0hjW/HVHZfUKllR7OJOxolQKW0jgikOTxLUnqUxEN0vyJYOElkh6QDWwzvavzf9W9LhIMkFac.";
+    }
+    host-name R1-ANSIBLE;
+    services {
+        ssh;
+        netconf {
+            ssh {
+                port 830;
+            }
+        }
+    }
+    syslog {
+        inactive: user * {
+            any emergency;
+        }
+        file messages {
+            any notice;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    export-format {
+        state-data {
+            json {
+                compact;
+            }
+        }
+    }
+    processes {
+        dhcp-service {
+            traceoptions {
+                file dhcp_logfile size 10m;
+                level all;
+                flag packet;
+            }
+        }
+    }
+    ntp {
+        server 15.22.33.44;
+        server 99.99.99.99;
+    }
+}
+interfaces {
+    fxp0 {
+        unit 0 {
+            family inet {
+                address 192.168.4.101/22;
+            }
+        }
+    }
+}
+snmp {
+    community R1-com1;
+    community R1-com2;
+    community R1-com3;
+}
+protocols {
+    bgp {
+        local-as 5;
+    }
+}
+firewall {
+    family inet {
+        filter allow_ssh_acl {
+            term ssh_rule {
+                from {
+                    protocol tcp;
+                    source-port ssh;
+                }
+            }
+        }
+    }
+}

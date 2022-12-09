@@ -1,0 +1,71 @@
+---
+- name: "Play 1 - Testing Setup Module"
+  hosts: localhost
+
+  tasks:
+    - name: "Collecting local info"
+      ansible.builtin.setup:
+        gather_subset:
+          - "min"
+      register: localfacts
+    
+    - name: "Saving the date as a fact"
+      set_fact:
+        mydate: "{{ localfacts.ansible_facts.ansible_date_time.date }}"
+
+    - name: "Creating the directory"
+      ansible.builtin.file:
+        path: "saved-configurations/{{ mydate }}"
+        state: directory
+      run_once: true
+
+- name: "Play 2"
+  hosts: all
+
+  tasks:
+    - name: "Pulling info from device via NAPALM"
+      napalm_get_facts:
+        hostname: "{{ ansible_host }}"
+        username: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        dev_os: "{{ napalm_platform }}"
+        filter: ["config"]
+      register: result
+
+
+    - name: "Create running config directory"
+      ansible.builtin.file:
+        path: "saved-configurations/{{ hostvars.localhost.mydate }}/all-devices-running-configs"
+        state: directory
+      run_once: true
+
+    - name: "Copying the Running Config"
+      ansible.builtin.copy:
+        content: "{{ result.ansible_facts.napalm_config.running }}"
+        dest: "saved-configurations/{{ hostvars.localhost.mydate }}/all-devices-running-configs/{{ inventory_hostname}}-running.txt"
+
+    - name: "Creating the startup config directory"
+      ansible.builtin.file:
+        path: "saved-configurations/{{ hostvars.localhost.mydate }}/cisco-startup-configs"
+        state: directory
+      run_once: true
+
+    - name: "Copying the Startup Config"
+      ansible.builtin.copy:
+        content: "{{ result.ansible_facts.napalm_config.startup }}"
+        dest: "saved-configurations/{{ hostvars.localhost.mydate }}/cisco-startup-configs/{{ inventory_hostname}}-startup.txt"
+      when: "ansible_network_os == 'cisco.ios.ios'"
+
+    - name: "Creating the candidate config directory"
+      ansible.builtin.file:
+        path: "saved-configurations/{{ hostvars.localhost.mydate }}/juniper-candidate-configs"
+        state: directory
+      run_once: true
+
+    - name: "Copying the Candidate Config"
+      ansible.builtin.copy:
+        content: "{{ result.ansible_facts.napalm_config.candidate }}"
+        dest: "saved-configurations/{{ hostvars.localhost.mydate }}/juniper-candidate-configs/{{ inventory_hostname}}-candidate.txt"
+      when: "ansible_network_os == 'junipernetworks.junos.junos'"
+
+

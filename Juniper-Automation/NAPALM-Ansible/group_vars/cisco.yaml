@@ -1,0 +1,6 @@
+---
+ansible_user: "john"
+ansible_password: "cisco"
+ansible_network_os: "cisco.ios.ios"
+ansible_connection: network_cli
+napalm_platform: "ios"
