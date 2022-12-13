@@ -1,0 +1,13 @@
+---
+- name: "Testing my new module"
+  hosts: R1
+
+  tasks:
+    - name: "Testing that this module actually works"
+      test_blah:
+        mystring: "tHiS Is aNOtheR teST stRing"
+      register: result
+    
+    - name: "Printing the output of the module"
+      debug:
+        msg: "{{ result.result.result }}"

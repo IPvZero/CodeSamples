@@ -1,0 +1,13 @@
+---
+- name: Testing Scrapli in Ansible
+  hosts: all
+  tasks:
+    - name: Using the new Scrapli module
+      use_scrapli:
+        ip: "{{ ansible_host }}"
+      register: result
+
+    - name: Printing the output
+      debug:
+        msg: "{{ result.data.result.split('\n') }}"
+
