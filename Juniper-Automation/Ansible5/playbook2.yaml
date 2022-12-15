@@ -1,0 +1,6 @@
+---
+- name: "Using the OSPF Role"
+  hosts: juniper
+
+  roles:
+    - junos_configure_ospf

@@ -1,0 +1,16 @@
+---
+- name: "OSPF Playbook"
+  hosts: juniper
+
+  roles:
+    - junos_configure_ospf
+
+  tasks:
+    - name: "Executing OSPF Parser Module"
+      neighbor_check:
+        ip: "{{ ansible_host }}"
+      register: result
+
+    - name: "Printing the Output of Custom Module"
+      debug:
+        msg: "{{ result.data.result }}"

@@ -1,0 +1,13 @@
+---
+# defaults file for junos_configure_ospf
+# Define Task Names
+task_one_name: "Pushing the OSPF Configurations to Device"
+task_two_name: "Printing the OSPF Config Result"
+task_three_name: "Sending Show Command To Device"
+task_four_name: "Printing the OSPF Command Result"
+
+#Define the OSPF Template
+ospf_template: "ospf.j2"
+
+#Define OSPF Show Command
+ospf_show_command: "show configuration"

@@ -1,0 +1,22 @@
+---
+# tasks file for junos_configure_ospf
+
+- name: "Task 1: {{ task_one_name }}"
+  junipernetworks.junos.junos_config:
+    src: "{{ ospf_template }}"
+  register: ospf_result
+
+- name: "Task 2: {{ task_two_name }}"
+  debug:
+    msg: "{{ ospf_result }}"
+
+- name: "Task 3: {{ task_three_name }}"
+  junipernetworks.junos.junos_command:
+    commands:
+    - "{{ ospf_show_command }}"
+  register: ospf_show_output
+
+- name: "Task 4: {{ task_four_name }}"
+  debug:
+    msg: "{{ ospf_show_output.stdout[0].split('\n') }}"
+

@@ -1,0 +1,21 @@
+---
+- name: "OSPF Playbook"
+  hosts: juniper
+
+  roles:
+    - junos_configure_ospf
+
+  tasks:
+
+    - name: "Pause for 40 seconds to let adjacency establish"
+      ansible.builtin.pause:
+        seconds: 40
+
+    - name: "Executing OSPF Parser Module"
+      neighbor_check:
+        ip: "{{ ansible_host }}"
+      register: result
+
+    - name: "Printing the Output of Custom Module"
+      debug:
+        msg: "{{ result.data.result }}"

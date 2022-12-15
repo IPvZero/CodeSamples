@@ -1,0 +1,7 @@
+---
+
+OSPF:
+  router-id: "1.1.1.1"
+  configs:
+    - interface: "ge-0/0/0.0"
+      area: "0.0.0.0"

@@ -1,0 +1,7 @@
+{% if OSPF is defined %}
+delete protocols ospf
+set routing-options router-id {{ OSPF['router-id'] }}
+{% for line in OSPF['configs'] %}
+set protocols ospf area {{ line['area'] }} interface {{ line['interface'] }}
+{% endfor %}
+{% endif %}

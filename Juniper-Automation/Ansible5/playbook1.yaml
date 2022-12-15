@@ -1,0 +1,23 @@
+---
+- name: "Testing OSPF configs"
+  hosts: juniper
+
+  tasks:
+    - name: "Push ospf"
+      junipernetworks.junos.junos_config:
+        src: "ospf.j2"
+      register: ospf_result
+
+    - name: Print the result
+      debug:
+        msg: "{{ ospf_result }}"
+
+    - name: "Sending show command"
+      junipernetworks.junos.junos_command:
+        commands:
+        - "show configuration protocols"
+      register: ospf_show_output
+
+    - name: "Print show command"
+      debug:
+        msg: "{{ ospf_show_output.stdout[0].split('\n') }}"
