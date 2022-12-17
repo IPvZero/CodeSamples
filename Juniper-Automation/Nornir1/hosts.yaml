@@ -1,0 +1,26 @@
+---
+R1:
+  hostname: "192.168.4.101"
+  groups:
+    - juniper
+  data:
+    bgp: 65001
+
+
+R2:
+  hostname: "192.168.4.102"
+  groups:
+    - juniper
+  data:
+    bgp: 65002
+
+R3:
+  password: "cisco"
+  platform: "cisco_ios"
+  hostname: "192.168.4.103"
+  groups:
+    - cisco
+  data:
+    bgp: 65003
+
+

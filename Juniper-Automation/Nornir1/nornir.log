@@ -1,0 +1,41 @@
+2022-12-17 17:46:54,937 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:47:56,365 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:48:11,832 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:49:03,437 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:49:45,844 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:50:33,861 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:52:10,398 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:52:47,600 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:54:07,779 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:54:22,642 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:54:37,681 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:55:50,803 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:56:18,748 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:57:31,965 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:59:06,570 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 17:59:06,571 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'print_me' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir1/example2.py", line 6, in print_me
+    print(f"{task.host} is in BGP ASN {task.host.data.bgp}")
+AttributeError: 'dict' object has no attribute 'bgp'
+
+2022-12-17 17:59:06,571 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'print_me' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir1/example2.py", line 6, in print_me
+    print(f"{task.host} is in BGP ASN {task.host.data.bgp}")
+AttributeError: 'dict' object has no attribute 'bgp'
+
+2022-12-17 17:59:06,572 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'print_me' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir1/example2.py", line 6, in print_me
+    print(f"{task.host} is in BGP ASN {task.host.data.bgp}")
+AttributeError: 'dict' object has no attribute 'bgp'
+
+2022-12-17 17:59:24,508 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts
+2022-12-17 18:00:29,742 -  nornir.core -     INFO -        run() - Running task 'print_me' with args {} on 3 hosts

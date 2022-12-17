@@ -1,0 +1,9 @@
+---
+juniper:
+  platform: "juniper_junos"
+  password: "Juniper1"
+
+
+cisco:
+  platform: "cisco_ios"
+  password: "cisco"
