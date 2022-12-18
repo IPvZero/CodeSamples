@@ -1,0 +1,691 @@
+2022-12-18 12:23:42,365 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:24:15,611 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:24:31,768 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:49:30,361 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:49:56,373 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:50:25,408 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:51:25,157 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:52:00,403 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:52:13,696 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:52:58,234 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:53:30,793 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:54:31,333 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 12:58:17,883 -  nornir.core -     INFO -        run() - Running task 'get_some_stuff' with args {} on 3 hosts
+2022-12-18 14:01:30,857 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:01:41,984 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'set\\ system\\ snmp\\ community\\ NORNIRTEST' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-12-18 14:01:41,985 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 9, in push_some_config
+    task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-12-18 14:01:42,005 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'set\\ system\\ snmp\\ community\\ NORNIRTEST' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-12-18 14:01:42,006 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 9, in push_some_config
+    task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-12-18 14:02:28,304 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:02:39,140 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'set\\ system\\ snmp\\ community\\ NORNIRTEST' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-12-18 14:02:39,140 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 9, in push_some_config
+    task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-12-18 14:02:39,295 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_netmiko/tasks/netmiko_send_config.py", line 38, in netmiko_send_config
+    result = net_connect.send_config_set(config_commands=config_commands, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 2202, in send_config_set
+    output += self.read_until_pattern(pattern=re.escape(cmd.strip()))
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/netmiko/base_connection.py", line 672, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'set\\ system\\ snmp\\ community\\ NORNIRTEST' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2022-12-18 14:02:39,296 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 9, in push_some_config
+    task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_config (failed)
+
+
+2022-12-18 14:03:52,154 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:07:18,384 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:07:18,386 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host['snmp']}"],
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp'
+
+2022-12-18 14:07:18,386 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host['snmp']}"],
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp'
+
+2022-12-18 14:07:32,211 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:07:32,212 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host['snmp']}"],
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp'
+
+2022-12-18 14:07:32,213 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host['snmp']}"],
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp'
+
+2022-12-18 14:07:43,883 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:07:43,884 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host.data['snmp']}"],
+KeyError: 'snmp'
+
+2022-12-18 14:07:43,885 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host.data['snmp']}"],
+KeyError: 'snmp'
+
+2022-12-18 14:08:45,804 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:08:45,805 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host.data['snmp']}"],
+KeyError: 'snmp'
+
+2022-12-18 14:08:45,805 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host.data['snmp']}"],
+KeyError: 'snmp'
+
+2022-12-18 14:09:11,601 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:09:11,602 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host.data['snmp']}"],
+KeyError: 'snmp'
+
+2022-12-18 14:09:11,603 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host.data['snmp']}"],
+KeyError: 'snmp'
+
+2022-12-18 14:09:25,664 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:09:25,665 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host['snmp']}"],
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp'
+
+2022-12-18 14:09:25,666 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'push_some_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook2.py", line 11, in push_some_config
+    config_commands=[f"set snmp community {task.host['snmp']}"],
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 350, in __getitem__
+    return self.data[item]
+KeyError: 'snmp'
+
+2022-12-18 14:12:20,513 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:15:42,137 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:17:07,269 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:18:41,025 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:45:21,730 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:45:52,334 -  nornir.core -     INFO -        run() - Running task 'push_some_config' with args {} on 2 hosts
+2022-12-18 14:52:14,196 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:53:29,795 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:54:14,024 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:56:04,923 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:56:05,875 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:56:05,890 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:56:20,774 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:56:21,689 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:56:21,697 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:57:38,406 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:57:39,304 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:57:39,318 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:57:49,591 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 14:57:50,532 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:57:50,563 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 14, in new_random_test
+    dict_configuration = json.loads(configuration.result)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2022-12-18 14:59:41,288 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:00:13,250 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:01:33,109 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:02:25,751 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:03:09,620 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:03:14,801 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:03:46,223 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:03:56,598 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:06:03,343 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:06:15,016 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:07:14,172 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:08:17,514 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:08:30,076 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:09:07,145 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:09:29,984 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:09:31,009 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 21, in new_random_test
+    rprint(element["address"])
+KeyError: 'address'
+
+2022-12-18 15:09:31,010 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'new_random_test' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook3.py", line 21, in new_random_test
+    rprint(element["address"])
+KeyError: 'address'
+
+2022-12-18 15:10:05,211 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:10:35,105 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:11:07,779 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:11:18,734 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:11:33,477 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:13:27,969 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 15:14:11,756 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 21:22:45,998 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 21:27:00,308 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 21:29:19,055 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 21:37:38,618 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 21:39:57,481 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 21:44:25,691 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:05:35,302 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:06:19,001 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:07:35,594 -  nornir.core -     INFO -        run() - Running task 'grouped_tasks' with args {} on 2 hosts
+2022-12-18 22:10:17,777 -  nornir.core -     INFO -        run() - Running task 'grouped_tasks' with args {} on 2 hosts
+2022-12-18 22:18:07,705 -  nornir.core -     INFO -        run() - Running task 'grouped_tasks' with args {} on 2 hosts
+2022-12-18 22:18:08,803 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'return_to_nornir' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: return_to_nornir() got multiple values for argument 'host'
+
+2022-12-18 22:18:08,804 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'grouped_tasks' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 38, in grouped_tasks
+    task.run(task=return_to_nornir, host=task.host, result=result)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: return_to_nornir (failed)
+
+
+2022-12-18 22:18:08,819 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'return_to_nornir' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+TypeError: return_to_nornir() got multiple values for argument 'host'
+
+2022-12-18 22:18:08,820 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'grouped_tasks' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 38, in grouped_tasks
+    task.run(task=return_to_nornir, host=task.host, result=result)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: return_to_nornir (failed)
+
+
+2022-12-18 22:19:14,988 -  nornir.core -     INFO -        run() - Running task 'grouped_tasks' with args {} on 2 hosts
+2022-12-18 22:19:16,008 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'grouped_tasks' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 37, in grouped_tasks
+    for result in result_list:
+TypeError: 'Result' object is not iterable
+
+2022-12-18 22:19:16,009 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'grouped_tasks' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 37, in grouped_tasks
+    for result in result_list:
+TypeError: 'Result' object is not iterable
+
+2022-12-18 22:29:11,801 -  nornir.core -     INFO -        run() - Running task 'pull_some_data' with args {} on 2 hosts
+2022-12-18 22:29:11,804 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "juniper_junos". Is the library installed?
+
+2022-12-18 22:29:11,804 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'pull_some_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 9, in pull_some_data
+    task.run(task=napalm_get, getters=["get_environment"])
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2022-12-18 22:29:11,805 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/connections/__init__.py", line 55, in open
+    network_driver = get_network_driver(platform)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/base/__init__.py", line 99, in get_network_driver
+    raise ModuleImportError(
+napalm.base.exceptions.ModuleImportError: Cannot import "juniper_junos". Is the library installed?
+
+2022-12-18 22:29:11,805 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'pull_some_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 9, in pull_some_data
+    task.run(task=napalm_get, getters=["get_environment"])
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2022-12-18 22:30:27,366 -  nornir.core -     INFO -        run() - Running task 'pull_some_data' with args {} on 2 hosts
+2022-12-18 22:31:45,076 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:31:58,694 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:32:34,549 -  nornir.core -     INFO -        run() - Running task 'pull_some_data' with args {} on 2 hosts
+2022-12-18 22:32:43,107 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:33:08,319 -  nornir.core -     INFO -        run() - Running task 'new_random_test' with args {} on 2 hosts
+2022-12-18 22:33:42,565 -  nornir.core -     INFO -        run() - Running task 'pull_some_data' with args {} on 2 hosts
+2022-12-18 22:37:05,821 -  nornir.core -     INFO -        run() - Running task 'configure_some_data' with args {} on 2 hosts
+2022-12-18 22:37:06,841 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/device.py", line 1457, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/utils/config.py", line 500, in try_load
+    got = self.rpc.load_config(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/rpcmeta.py", line 288, in load_config
+    return self._junos.execute(rpc, ignore_warning=ignore_warning)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: smnp, message: syntax error)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/junos/junos.py", line 263, in _load_candidate
+    self.device.cu.load(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/utils/config.py", line 589, in load
+    return try_load(rpc_contents, rpc_xattrs, ignore_warning=ignore_warning)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/utils/config.py", line 506, in try_load
+    raise ConfigLoadError(cmd=err.cmd, rsp=err.rsp, errs=err.errs)
+jnpr.junos.exception.ConfigLoadError: ConfigLoadError(severity: error, bad_element: smnp, message: error: syntax error)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/junos/junos.py", line 284, in load_merge_candidate
+    self._load_candidate(filename, config, False)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/junos/junos.py", line 274, in _load_candidate
+    raise MergeConfigException(e.errs)
+napalm.base.exceptions.MergeConfigException: [{'severity': 'error', 'source': None, 'edit_path': None, 'bad_element': 'smnp', 'message': 'syntax error'}]
+
+2022-12-18 22:37:06,842 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'configure_some_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 9, in configure_some_data
+    task.run(task=napalm_configure, configuration="set smnp community NAPALMTEST")
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-18 22:37:06,855 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'napalm_configure' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/device.py", line 834, in execute
+    rpc_rsp_e = self._rpc_reply(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 165, in wrapper
+    raise ex
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 117, in wrapper
+    rsp = function(self, *args, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/device.py", line 1457, in _rpc_reply
+    return self._conn.rpc(rpc_cmd_e, filter_xml)._NCElement__doc
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ncclient/manager.py", line 246, in execute
+    return cls(self._session,
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ncclient/operations/third_party/juniper/rpc.py", line 52, in request
+    return self._request(rpc)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ncclient/operations/rpc.py", line 375, in _request
+    raise self._reply.error
+ncclient.operations.rpc.RPCError: syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/utils/config.py", line 500, in try_load
+    got = self.rpc.load_config(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/rpcmeta.py", line 288, in load_config
+    return self._junos.execute(rpc, ignore_warning=ignore_warning)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 76, in wrapper
+    return function(*args, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/decorators.py", line 31, in wrapper
+    return function(*args, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/device.py", line 854, in execute
+    raise EzErrors.RpcError(cmd=rpc_cmd_e, rsp=rsp, errs=ex)
+jnpr.junos.exception.RpcError: RpcError(severity: error, bad_element: smnp, message: syntax error)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/junos/junos.py", line 263, in _load_candidate
+    self.device.cu.load(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/utils/config.py", line 589, in load
+    return try_load(rpc_contents, rpc_xattrs, ignore_warning=ignore_warning)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jnpr/junos/utils/config.py", line 506, in try_load
+    raise ConfigLoadError(cmd=err.cmd, rsp=err.rsp, errs=err.errs)
+jnpr.junos.exception.ConfigLoadError: ConfigLoadError(severity: error, bad_element: smnp, message: error: syntax error)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_napalm/plugins/tasks/napalm_configure.py", line 35, in napalm_configure
+    device.load_merge_candidate(filename=filename, config=configuration)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/junos/junos.py", line 284, in load_merge_candidate
+    self._load_candidate(filename, config, False)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/napalm/junos/junos.py", line 274, in _load_candidate
+    raise MergeConfigException(e.errs)
+napalm.base.exceptions.MergeConfigException: [{'severity': 'error', 'source': None, 'edit_path': None, 'bad_element': 'smnp', 'message': 'syntax error'}]
+
+2022-12-18 22:37:06,856 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'configure_some_data' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir2/runbook4.py", line 9, in configure_some_data
+    task.run(task=napalm_configure, configuration="set smnp community NAPALMTEST")
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_configure (failed)
+
+
+2022-12-18 22:37:42,874 -  nornir.core -     INFO -        run() - Running task 'configure_some_data' with args {} on 2 hosts

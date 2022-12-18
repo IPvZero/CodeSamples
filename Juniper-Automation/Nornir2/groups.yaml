@@ -1,0 +1,11 @@
+---
+juniper:
+  platform: "junos"
+  password: "Juniper1"
+  data:
+    snmp: "JUNIPER-SNMP-COMMUNITY"
+  connection_options:
+    netmiko:
+      platform: "juniper_junos"
+
+

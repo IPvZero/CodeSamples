@@ -1,0 +1,20 @@
+---
+R1:
+  hostname: "192.168.4.101"
+  groups:
+    - juniper
+  data:
+    bgp: 65001
+    snmp: "Juniper-R1-Community"
+
+
+R2:
+  hostname: "192.168.4.102"
+  groups:
+    - juniper
+  data:
+    bgp: 65002
+
+
+
+
