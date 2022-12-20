@@ -1,0 +1,9 @@
+bgp: 65002
+ospf:
+  rid: "2.2.2.2"
+  networks:
+    - network: "20.10.10.0"
+      mask: "0.0.0.255"
+    - network: "30.20.20.0"
+      mask: "0.0.0.255"
+  loopback: "2.2.2.2/32"

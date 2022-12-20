@@ -1,0 +1,25 @@
+---
+R1:
+  hostname: "192.168.4.101"
+  groups:
+    - juniper
+  data:
+    vendor: "juniper"
+
+R2:
+  hostname: "192.168.4.102"
+  groups:
+    - juniper
+  data:
+    vendor: "juniper"
+
+
+R3:
+  hostname: "192.168.4.103"
+  groups:
+    - cisco
+  data:
+    vendor: "cisco"
+
+
+

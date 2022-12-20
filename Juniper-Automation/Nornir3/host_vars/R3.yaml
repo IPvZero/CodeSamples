@@ -1,0 +1,10 @@
+bgp: 65001
+snmp: "Cisco-R3-Community"
+ospf:
+  rid: "3.3.3.3"
+  networks:
+    - network: "10.10.10.0"
+      mask: "0.0.0.255"
+    - network: "10.20.20.0"
+      mask: "0.0.0.255"
+loopback: "3.3.3.3/32"

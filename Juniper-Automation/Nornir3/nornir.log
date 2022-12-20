@@ -1,0 +1,667 @@
+2022-12-20 14:45:18,953 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 2 hosts
+2022-12-20 14:47:28,612 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 2 hosts
+2022-12-20 14:47:44,347 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 2 hosts
+2022-12-20 14:48:40,326 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 2 hosts
+2022-12-20 14:51:12,420 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 14:55:04,349 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 15:59:17,300 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 15:59:17,301 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './group_vars/junos.yaml'
+
+2022-12-20 15:59:17,302 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 15:59:17,302 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './group_vars/junos.yaml'
+
+2022-12-20 15:59:17,303 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 15:59:17,304 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './group_vars/cisco_ios.yaml'
+
+2022-12-20 15:59:17,304 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 16:01:52,774 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:01:52,776 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(task=load_yaml, file=f"./group_vars/{task.host.vendor}.yaml")
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'vendor'
+
+2022-12-20 16:01:52,777 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(task=load_yaml, file=f"./group_vars/{task.host.vendor}.yaml")
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'vendor'
+
+2022-12-20 16:01:52,778 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(task=load_yaml, file=f"./group_vars/{task.host.vendor}.yaml")
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'vendor'
+
+2022-12-20 16:02:14,635 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:02:14,638 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 11, in load_my_vars
+    print(task.host.vendor)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'vendor'
+
+2022-12-20 16:02:14,639 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 11, in load_my_vars
+    print(task.host.vendor)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'vendor'
+
+2022-12-20 16:02:14,639 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 11, in load_my_vars
+    print(task.host.vendor)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/inventory.py", line 368, in __getattribute__
+    return object.__getattribute__(self, name)
+AttributeError: 'Host' object has no attribute 'vendor'
+
+2022-12-20 16:02:23,973 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:02:23,975 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 11, in load_my_vars
+    print(task.host.data.vendor)
+AttributeError: 'dict' object has no attribute 'vendor'
+
+2022-12-20 16:02:23,975 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 11, in load_my_vars
+    print(task.host.data.vendor)
+AttributeError: 'dict' object has no attribute 'vendor'
+
+2022-12-20 16:02:23,976 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 11, in load_my_vars
+    print(task.host.data.vendor)
+AttributeError: 'dict' object has no attribute 'vendor'
+
+2022-12-20 16:02:57,267 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:03:40,497 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:03:40,498 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './group_vars/junos.yaml'
+
+2022-12-20 16:03:40,499 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 16:03:40,501 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './group_vars/junos.yaml'
+
+2022-12-20 16:03:40,502 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './group_vars/cisco_ios.yaml'
+
+2022-12-20 16:03:40,502 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 16:03:40,503 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 12, in load_my_vars
+    group_data = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 16:05:31,181 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:09:40,415 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:09:40,419 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_utils/plugins/tasks/data/load_yaml.py", line 26, in load_yaml
+    data = yml.load(f)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/main.py", line 434, in load
+    return constructor.get_single_data()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 121, in get_single_data
+    return self.construct_document(node)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 131, in construct_document
+    for _dummy in generator:
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 674, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 445, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 263, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/ruamel/yaml/constructor.py", line 294, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "./host_vars/R1.yaml", line 1, column 1
+found duplicate key "snmp" with value "R1SNMPCOMMUNITY" (original value: "Juniper-R1-Community")
+  in "./host_vars/R1.yaml", line 11, column 1
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+
+2022-12-20 16:09:40,420 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'load_my_vars' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook1.py", line 9, in load_my_vars
+    host_data = task.run(task=load_yaml, file=f"./host_vars/{task.host}.yaml")
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2022-12-20 16:10:48,923 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:13:51,422 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:15:49,568 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:22:44,932 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:23:10,902 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:23:51,942 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:26:47,137 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 16:53:41,714 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 17:09:28,027 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:09:49,232 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:11:48,104 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:13:36,450 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 17:16:57,867 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:16:57,872 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'host_vars'
+
+2022-12-20 17:16:57,872 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:16:57,872 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'host_vars'
+
+2022-12-20 17:16:57,872 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:17:10,355 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:17:10,360 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ task.host.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'task' is undefined
+
+2022-12-20 17:17:10,360 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ task.host.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'task' is undefined
+
+2022-12-20 17:17:10,362 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:17:10,362 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:17:22,597 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:17:22,603 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ task.host.data.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'task' is undefined
+
+2022-12-20 17:17:22,604 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ task.host.data.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'task' is undefined
+
+2022-12-20 17:17:22,604 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:17:22,604 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:17:30,223 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:17:30,229 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.data.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'host_vars'
+
+2022-12-20 17:17:30,229 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.data.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'host_vars'
+
+2022-12-20 17:17:30,229 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:17:30,229 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:18:16,097 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:18:16,104 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'host_vars'
+
+2022-12-20 17:18:16,104 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:18:16,105 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars.snmp }}
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'host_vars'
+
+2022-12-20 17:18:16,105 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:18:32,173 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:19:04,169 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:19:13,948 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:19:25,621 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:19:25,627 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars }}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'host_vars'
+
+2022-12-20 17:19:25,627 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars }}
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'host_vars'
+
+2022-12-20 17:19:25,628 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:19:25,628 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:20:03,031 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 17:20:03,036 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:20:16,837 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 17:20:16,841 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:20:16,846 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars.snmp }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'snmp'
+
+2022-12-20 17:20:16,846 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:20:44,938 -  nornir.core -     INFO -        run() - Running task 'load_my_vars' with args {} on 3 hosts
+2022-12-20 17:22:25,474 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 17:22:25,480 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 17:22:25,485 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'template_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir_jinja2/plugins/tasks/template_file.py", line 43, in template_file
+    text = t.render(host=task.host, **kwargs)
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "templates/juniper/snmp.j2", line 1, in top-level template code
+    set snmp community {{ host.host_vars.snmp }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'snmp'
+
+2022-12-20 17:22:25,485 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'generate_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/Nornir3/runbook2.py", line 18, in generate_config
+    snmp_template = task.run(
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: template_file (failed)
+
+
+2022-12-20 17:23:35,990 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 17:23:35,994 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 18:05:55,678 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:09:13,424 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:12:34,133 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:14:37,586 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:14:37,590 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 18:14:49,299 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:14:49,305 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 18:18:16,891 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:18:16,895 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 18:19:36,071 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:19:36,074 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 18:21:18,574 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:21:18,577 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts
+2022-12-20 18:23:27,900 -  nornir.core -     INFO -        run() - Running task 'load_vars' with args {} on 3 hosts
+2022-12-20 18:23:27,904 -  nornir.core -     INFO -        run() - Running task 'generate_config' with args {} on 3 hosts

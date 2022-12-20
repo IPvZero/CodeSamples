@@ -1,0 +1,12 @@
+---
+juniper:
+  platform: "junos"
+  password: "Juniper1"
+  connection_options:
+    netmiko:
+      platform: "juniper_junos"
+
+cisco:
+  platform: "cisco_ios"
+  password: "cisco"
+
