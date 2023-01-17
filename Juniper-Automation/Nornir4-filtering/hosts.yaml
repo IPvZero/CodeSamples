@@ -1,0 +1,85 @@
+---
+
+R1:
+  hostname: 192.168.4.101
+  platform: "juniper_junos"
+  username: "john"
+  password: "Juniper1"
+  groups:
+    - juniper_group
+  data:
+    nation: usa
+    latitude: north
+    longitude: west
+    state: idaho
+    bgp: 65001
+
+R2:
+  hostname: 192.168.4.102
+  platform: "juniper_junos"
+  username: "john"
+  password: "Juniper1"
+  groups:
+    - juniper_group
+  data:
+    nation: usa
+    latitude: north
+    longitude: central
+    state: north dakota
+    bgp: 65002
+
+R3:
+  hostname: 192.168.4.103
+  platform: "cisco_ios"
+  username: "john"
+  password: "cisco"
+  groups:
+    - cisco_group
+  data:
+    nation: usa
+    latitude: north
+    longitude: east
+    state: maine
+    bgp: 65003
+
+R4:
+  hostname: 192.168.4.104
+  platform: "cisco_ios"
+  username: "john"
+  password: "cisco"
+  groups:
+    - cisco_group
+  data:
+    nation: usa
+    latitude: south
+    longitude: west
+    state: california
+    bgp: 65004
+
+R5:
+  hostname: 192.168.4.105
+  platform: "juniper_junos"
+  username: "john"
+  password: "Juniper1"
+  groups:
+    - juniper_group
+  data:
+    nation: usa
+    latitude: south
+    longitude: central
+    state: oklahoma
+    bgp: 65005
+
+R6:
+  hostname: 192.168.4.106
+  platform: "cisco_ios"
+  username: "john"
+  password: "cisco"
+  groups:
+    - cisco_group
+  data:
+    nation: usa
+    latitude: south
+    longitude: east
+    state: florida
+    bgp: 65006

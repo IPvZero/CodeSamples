@@ -1,0 +1,8 @@
+---
+
+juniper_group:
+  data:
+    bgp: 65001
+cisco_group:
+  data:
+    bgp: 65002
