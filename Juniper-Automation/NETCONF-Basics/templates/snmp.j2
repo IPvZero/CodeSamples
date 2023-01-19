@@ -1,0 +1,17 @@
+<edit-config>
+<target>
+  <candidate/>
+</target>
+  <default-operation>merge</default-operation>  
+  <config>
+    <configuration>
+            <snmp>
+            {% for community in SNMPCOMMUNITIES %}
+                <community>
+                    <name>{{ community }}</name>
+                </community>
+            {% endfor %}
+            </snmp>
+    </configuration>
+  </config>
+</edit-config>

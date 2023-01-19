@@ -1,0 +1,22 @@
+<edit-config>
+  <target>
+    <candidate/>
+  </target>
+  <default-operation>merge</default-operation>  
+  <config>
+    <configuration>
+            <protocols>
+                <ospf>
+                    <area>
+                        <name>0.0.0.0</name>
+                    {% for intf in OSPF.interfaces %}
+                        <interface>
+                            <name>{{ intf }}</name>
+                        </interface>
+                    {% endfor %}
+                    </area>
+                </ospf>
+            </protocols>
+    </configuration>
+  </config>
+</edit-config>

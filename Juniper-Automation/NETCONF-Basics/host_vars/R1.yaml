@@ -1,0 +1,11 @@
+---
+SNMPCOMMUNITIES:
+  - "R1-Com1"
+  - "R1-Com2"
+  - "R1-Com3"
+
+OSPF:
+  area: "0.0.0.0"
+  interfaces:
+    - "ge0/0/0.0"
+    - "ge0/0/1.1"
