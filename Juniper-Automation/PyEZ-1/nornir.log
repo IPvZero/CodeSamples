@@ -1,0 +1,9 @@
+2023-01-21 21:38:58,268 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:40:14,673 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:40:40,696 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:40:46,606 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:40:54,589 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:42:24,011 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:44:52,377 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:46:23,615 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts
+2023-01-21 21:49:21,497 -  nornir.core -     INFO -        run() - Running task 'test_stuff' with args {} on 2 hosts

@@ -1,0 +1,6 @@
+---
+juniper:
+  platform: "junos"
+  password: "Juniper1"
+
+
