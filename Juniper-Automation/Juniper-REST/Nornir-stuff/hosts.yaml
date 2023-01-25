@@ -1,0 +1,6 @@
+---
+
+R2:
+  hostname: "192.168.4.102"
+  groups:
+    - juniper

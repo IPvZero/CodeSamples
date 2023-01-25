@@ -1,0 +1,29 @@
+---
+- name: Get SNMP v3 information
+  hosts: juniper
+  gather_facts: false
+  connection: local
+  vars:
+    base_url: "http://{{ ansible_host }}:8080/rpc"
+    endpoint: "/get-snmp-v3-information"
+    headers:
+      Accept: "application/json"
+      Content-Type: "application/json"
+      Authorization: "Basic {{ 'john:Juniper1' | b64encode }}"
+  tasks:
+  - name: Get SNMP v3 information
+    uri:
+      url: "{{ base_url }}{{ endpoint }}"
+      method: POST
+      headers: "{{ headers }}"
+      return_content: yes
+    register: result
+
+  - name: Ensure Response is Successful
+    fail:
+      msg: "Error! The request failed with the status code {{ result.status }}"
+    when: result.status != 200
+
+  - name: Print
+    debug:
+      msg: "The Engine ID for {{ ansible_host}} is: {{ result.json['snmp-v3-information']['snmp-v3-general-information']['snmp-v3-engine-information']['engine-id'] }}"

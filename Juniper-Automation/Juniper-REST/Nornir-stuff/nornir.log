@@ -1,0 +1,8 @@
+2023-01-25 12:26:49,054 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:27:18,190 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:28:00,036 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:28:07,299 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:28:19,362 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:28:33,387 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:31:09,509 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
+2023-01-25 12:32:58,065 -  nornir.core -     INFO -        run() - Running task 'get_arp_info' with args {} on 1 hosts
