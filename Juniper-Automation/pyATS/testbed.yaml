@@ -1,0 +1,27 @@
+devices:
+  R1:
+    connections:
+      cli:
+        ip: 192.168.4.101
+        protocol: ssh
+    credentials:
+      default:
+        password: Juniper1
+        username: john
+      enable:
+        password: Juniper1
+    os: junos
+    type: junos
+  R2:
+    connections:
+      cli:
+        ip: 192.168.4.102
+        protocol: ssh
+    credentials:
+      default:
+        password: Juniper1
+        username: john
+      enable:
+        password: Juniper1
+    os: junos
+    type: junos
