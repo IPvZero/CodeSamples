@@ -1,0 +1,46 @@
+---
+
+R1:
+  hostname: 192.168.4.101
+  platform: "juniper_junos"
+  username: "john"
+  password: "Juniper1"
+  groups:
+    - juniper_group
+  data:
+    device_name: "R1"
+
+
+R2:
+  hostname: 192.168.4.102
+  platform: "juniper_junos"
+  username: "john"
+  password: "Juniper1"
+  groups:
+    - juniper_group
+  data:
+    device_name: "R2"
+
+
+R3:
+  hostname: 192.168.4.103
+  platform: "cisco_ios"
+  username: "john"
+  password: "cisco"
+  groups:
+    - cisco_group
+  data:
+    device_name: "R3"
+
+
+R4:
+  hostname: 192.168.4.104
+  platform: "cisco_ios"
+  username: "john"
+  password: "cisco"
+  groups:
+    - cisco_group
+  data:
+    device_name: "R4"
+
+

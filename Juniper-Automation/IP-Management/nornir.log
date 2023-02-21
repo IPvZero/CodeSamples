@@ -1,0 +1,252 @@
+2023-02-20 20:03:03,677 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:03:05,004 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:03:05,040 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:03:05,040 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:03:06,853 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:03:06,888 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:04:13,204 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:04:14,491 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:04:14,523 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:04:14,524 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:04:16,204 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:04:16,206 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:04:50,619 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:04:51,981 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:04:52,007 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:04:52,008 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:04:53,749 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:04:53,778 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:05:18,889 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:05:20,161 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:05:20,188 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:05:20,188 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:05:21,951 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:05:21,985 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 54, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:09:13,656 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:09:14,939 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:09:14,943 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:09:14,943 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:09:16,742 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 51, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:09:16,776 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 51, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:10:14,099 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:10:15,374 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:10:15,399 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:10:15,399 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:10:17,141 - nornir.core.task -    ERROR -      start() - Host 'R4': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 51, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:10:17,176 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'connect_cisco' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 27, in connect_cisco
+    parse_cisco(task, dict_interfaces)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 51, in parse_cisco
+    ip_addy = dict_interfaces[interface]["ip_address"]
+KeyError: 'ip_address'
+
+2023-02-20 20:10:55,673 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:10:56,952 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:11:13,949 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:11:15,368 - nornir.core.task -    ERROR -      start() - Host 'R2': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:11:15,384 - nornir.core.task -    ERROR -      start() - Host 'R1': task 'connect_junos' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/CodeSamples/.venv/lib/python3.10/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/CodeSamples/Juniper-Automation/IP-Management/script2.py", line 14, in connect_junos
+    junos_results = task.run(
+TypeError: string indices must be integers
+
+2023-02-20 20:11:15,384 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:11:55,962 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:11:57,719 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
+2023-02-20 20:14:05,814 -  nornir.core -     INFO -        run() - Running task 'connect_junos' with args {} on 2 hosts
+2023-02-20 20:14:07,090 -  nornir.core -     INFO -        run() - Running task 'connect_cisco' with args {} on 2 hosts
