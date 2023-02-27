@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RUNNING CONFIGURATIONS</title>
+</head>
+
+<body>
+    <h1>OUTPUTS</h1>
+    <ul>
+        {% for device, configuration in output.items() %}
+        <li>{{ device }}:</li>
+        <ul>
+            <pre>
+        {% for line in configuration %}
+        <li>{{ line }}</li>
+        {% endfor %}
+    </pre>
+        </ul>
+        {% endfor %}
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+---
+
+BGP:
+  ASN: 65001
+  type: internal
+
+NTP:
+  server: 1.2.3.4
+
+SNMP:
+  communities:
+    - CBTN1
+    - CBTN2
+    - IPvZero1
