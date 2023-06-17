@@ -1,0 +1,18 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+    - name: Update the packages
+      apt:
+        update_cache: yes
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Creating a little textfile
+      copy:
+        content: "Hello there from Ansible, welcome to the network"
+        dest: "~/welcomepack.txt"
