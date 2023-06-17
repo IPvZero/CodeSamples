@@ -1,0 +1,4 @@
+[servers]
+canada_ubuntu ansible_host=143.42.10.36 ansible_user=root ansible_password=RestlessBarkingWagon17
+germany_ubuntu ansible_host=143.42.29.170 ansible_user=root ansible_password=RestlessBarkingWagon17
+usa_ubuntu ansible_host=170.187.156.44 ansible_user=root ansible_password=RestlessBarkingWagon17
